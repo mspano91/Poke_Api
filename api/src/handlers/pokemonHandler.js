@@ -1,16 +1,28 @@
 const {
   getPokemon,
   getPokemon_ById,
+  getPokemon_ByName,
 } = require("../controllers/pokemonController");
 
-const getPokemonHandler = (req, res) => {
-  // Lógica adicional (puede incluir validación, autenticación, etc.)
-  getPokemon(req, res);
+//aca vamos a hacer el handler de la peticion general a la api para que me traiga todos
+const getPokemonHandler = async (req, res) => {
+  try {
+    const pokemonList = await getPokemon();
+    return res.status(200).json(pokemonList);
+  } catch (error) {
+    return res.status(500).send("El getPokemonHandler no funca");
+  }
 };
 
-//aca vamos a recibir por params por que recibe por id
-const getPokemonById = (req, res) => {
-  getPokemon_ById(req, res);
+//aca vamos a recibir por params porque recibe un ID
+const getPokemonById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await getPokemon_ById(id);
+    return res.status(200).json(data);
+  } catch (error) {
+    return res.status(500).send("El getPokemonHandler no funca");
+  }
 };
 
 const getPokemonByName = (req, res) => {

@@ -2,40 +2,38 @@ const axios = require("axios");
 const URL = "https://pokeapi.co/api/v2/pokemon";
 
 // controllers/pokemonController.js
-const getPokemon = async (req, res) => {
-  // Lógica para obtener un Pokémon
+const getPokemon = async () => {
+  // Lógica para obtener todos los pokemones
   try {
-    const response = await axios(`${URL}`);
+    const response = await axios(URL);
     const pokemonList = response.data.results;
     if (!pokemonList.length) {
-      return res.status(404).send("Pokemons not found.");
+      throw new Error("No Pokémon found in en GetPokemon controller");
     }
-    // const pokemonNames = pokemonList.map((pokemon) => pokemon.name);
-
-    return res.status(200).json(pokemonList);
+    return pokemonList;
   } catch (error) {
     return res.status(500).send(error.message);
   }
 };
 
-const getPokemon_ById = async (req, res) => {
-  // Lógica para crear un Pokémon
+//llama por id y name
+const getPokemon_ById = async (id) => {
+  // Lógica para traer pokemon por id
   try {
-    const { id } = req.params;
     const { data } = await axios(`${URL}/${id}`);
-    const { name, height, species, weight, stats, ability, sprites } = data;
-
+    const { name, height, types, weight, stats, abilities, sprites } = data;
+    const typesArray = types.map((type) => type.type.name);
     if (name) {
       const pokemonFound = {
         name,
         height,
-        species,
         weight,
-        stats,
-        ability,
-        sprites,
+        type: typesArray,
+        hp: stats[0]?.base_stat,
+        skills: abilities[0]?.ability.name,
+        image: sprites?.back_default,
       };
-      return res.status(200).send(pokemonFound);
+      return pokemonFound;
     } else {
       return res.status(404).json("this pokemon does not exist");
     }
