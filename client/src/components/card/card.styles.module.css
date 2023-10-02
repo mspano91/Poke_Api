@@ -1,0 +1,29 @@
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.615);
+    border: 1px white solid;
+    border-radius: 5px;
+    padding: 25px;
+    gap: 1rem;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+.cardContainer p{
+    font-size: 15px;
+    margin:0px;
+}
+
+.cardContainer img {
+    width: 80px;
+    height: cover;
+}
+
+.cardContainer h1 {
+    font-size: 20px;
+    margin: 0px;
+}
+.cardContainer:hover{
+    transform: scale(1.05);
+}

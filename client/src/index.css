@@ -12,7 +12,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+    max-width: 2280px;
+      margin: 0 auto;
+      text-align: center;
 }
+
+
 
 a {
   font-weight: 500;

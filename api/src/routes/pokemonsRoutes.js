@@ -2,14 +2,13 @@ const { Router } = require("express");
 const {
   getPokemonHandler,
   getPokemonById,
-  getPokemonByName,
   postPokemon,
 } = require("../handlers/pokemonHandler");
 const pokeRouter = Router();
 
 pokeRouter.get("/", getPokemonHandler);
 pokeRouter.get("/:id", getPokemonById);
-pokeRouter.get("/name?=", getPokemonByName);
+// pokeRouter.get("/name?=", getPokemonByName);
 pokeRouter.post("/", postPokemon);
 
 // router.delete("/", getPokemons);

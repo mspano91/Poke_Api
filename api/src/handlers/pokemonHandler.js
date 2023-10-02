@@ -1,7 +1,6 @@
 const {
   getPokemon,
   getPokemon_ById,
-  getPokemon_ByName,
 } = require("../controllers/pokemonController");
 
 //aca vamos a hacer el handler de la peticion general a la api para que me traiga todos
@@ -25,10 +24,6 @@ const getPokemonById = async (req, res) => {
   }
 };
 
-const getPokemonByName = (req, res) => {
-  res.status(200).send(console.log("got to the endpoint"));
-};
-
 const postPokemon = (req, res) => {
   res.status(200).send(console.log("got to the endpoint"));
 };
@@ -37,5 +32,4 @@ module.exports = {
   getPokemonHandler,
   getPokemonById,
   postPokemon,
-  getPokemonByName,
 };
