@@ -8,8 +8,7 @@ const pokeRouter = Router();
 
 pokeRouter.get("/", getPokemonHandler);
 pokeRouter.get("/:id", getPokemonById);
-// pokeRouter.get("/name?=", getPokemonByName);
-pokeRouter.post("/", postPokemon);
+pokeRouter.post("/create", postPokemon);
 
 // router.delete("/", getPokemons);
 // router.put("/", getPokemons);

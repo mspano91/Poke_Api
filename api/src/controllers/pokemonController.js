@@ -1,9 +1,9 @@
 const axios = require("axios");
-const URL = "https://pokeapi.co/api/v2/pokemon?limit=50";
+const URL = "https://pokeapi.co/api/v2/pokemon";
 
 // controllers/pokemonController.js
 const getPokemon = async () => {
-  const response = await axios(URL);
+  const response = await axios(`${URL}?limit=50`);
   const pokemonList = response.data.results; //accedemos a la api
 
   if (!pokemonList.length) {
@@ -31,10 +31,20 @@ const getPokemon_ById = async (id) => {
   // Lógica para traer pokemon por id
   try {
     const { data } = await axios(`${URL}/${id}`);
-    const { name, height, types, weight, stats, abilities, sprites } = data;
+    const {
+      id: dataId,
+      name,
+      height,
+      types,
+      weight,
+      stats,
+      abilities,
+      sprites,
+    } = data;
     const typesArray = types.map((type) => type.type.name);
     if (name) {
       const pokemonFound = {
+        id: dataId,
         name,
         height,
         weight,
@@ -52,8 +62,11 @@ const getPokemon_ById = async (id) => {
   }
 };
 
+const postNew_pokemon = async () => {};
+
 // Exporta las funciones para su uso en las rutas
 module.exports = {
   getPokemon,
   getPokemon_ById,
+  postNew_pokemon,
 };

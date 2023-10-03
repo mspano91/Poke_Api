@@ -1,9 +1,16 @@
-// import React from "react";
+import React from "react";
 
-// export default function Pagination() {
-//   return (
-//     <div>
-//       <h1>hola</h1>
-//     </div>
-//   );
-// }
+function Pagination({ currentPage, totalPages, onNextPage, onPrevPage }) {
+  return (
+    <div>
+      <button onClick={onPrevPage} disabled={currentPage === 1}>
+        PREV PAGE
+      </button>
+      <button onClick={onNextPage} disabled={currentPage === totalPages}>
+        NEXT PAGE
+      </button>
+    </div>
+  );
+}
+
+export default Pagination;

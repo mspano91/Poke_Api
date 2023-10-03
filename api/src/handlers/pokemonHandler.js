@@ -1,6 +1,7 @@
 const {
   getPokemon,
   getPokemon_ById,
+  postNew_pokemon,
 } = require("../controllers/pokemonController");
 
 //aca vamos a hacer el handler de la peticion general a la api para que me traiga todos
@@ -18,6 +19,7 @@ const getPokemonById = async (req, res) => {
   try {
     const { id } = req.params;
     const data = await getPokemon_ById(id);
+    console.log(data);
     return res.status(200).json(data);
   } catch (error) {
     return res.status(500).send("El getPokemonHandler no funca");

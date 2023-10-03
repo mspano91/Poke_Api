@@ -1,6 +1,10 @@
-import { GET_ALL_POKEMONS, GET_POKEMONS_ERROR } from "./action";
+import {
+  GET_ALL_POKEMONS,
+  GET_POKEMONS_ERROR,
+  GET_POKEMON_DETAIL,
+} from "./action";
 
-let initialState = { pokemons: [], error: null };
+let initialState = { pokemons: [], error: null, pokemonDetails: {} };
 
 const Reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -14,6 +18,11 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         error: action.payload,
+      };
+    case GET_POKEMON_DETAIL:
+      return {
+        ...state,
+        pokemonDetails: action.payload,
       };
     default:
       return state;

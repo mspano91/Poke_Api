@@ -9,21 +9,18 @@ import { getPokemonsAction } from "../../redux/action";
 
 function Home() {
   const dispatch = useDispatch();
-  const pokemons = useSelector((state) => state.pokemons);
 
   useEffect(() => {
     dispatch(getPokemonsAction());
-    // return(()=>{
-    //   clearAll()
-    // })
+    // return () => {
+    //   clearAll();
+    // };
   }, [dispatch]);
 
   return (
     <div className={Styles.home_container}>
       <NavBar />
-      <h1>estas en el home</h1>
       <Cards />
-      {/* <Pagination /> */}
     </div>
   );
 }
