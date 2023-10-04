@@ -15,10 +15,13 @@ const getType = async (req, res) => {
     for (let type of types) {
       const typeData = await axios(type.url);
       delete type.url;
+      //eliminamos la propiedad url del objeto type
       type.id = typeData.data.id;
+      //agregamos una propiedad nueva id
     }
     //insertamos los types a la BS
     const typeDb = await Type.bulkCreate(types);
+
     return res.status(200).json(typeDb);
   } catch (error) {
     return res.status(500).json({ error: error.message });

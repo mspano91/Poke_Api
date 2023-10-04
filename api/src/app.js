@@ -7,7 +7,7 @@ const mainRouter = require("./routes/mainRouter.js");
 
 require("./db.js");
 
-//configuracion incial
+//initialization
 const server = express();
 
 server.name = "API";
@@ -31,6 +31,7 @@ server.use((req, res, next) => {
   next();
 });
 
+//router path configurated
 server.use("/", mainRouter);
 
 // Error catching endware.

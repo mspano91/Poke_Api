@@ -1,14 +1,16 @@
 const axios = require("axios");
 const URL = "https://pokeapi.co/api/v2/pokemon";
+const { Pokemon, Type } = require("../db");
 
 // controllers/pokemonController.js
 const getPokemon = async () => {
-  const response = await axios(`${URL}?limit=50`);
+  const response = await axios(`${URL}?limit=1017`);
   const pokemonList = response.data.results; //accedemos a la api
 
   if (!pokemonList.length) {
     throw new Error("No Pokémon found in GetPokemon controller");
   }
+
   const pokeMap = pokemonList.map(async (el) => {
     const { data } = await axios.get(el.url);
     const typesArray = data.types.map((el) => el.type.name);
@@ -40,6 +42,9 @@ const getPokemon_ById = async (id) => {
       stats,
       abilities,
       sprites,
+      speed,
+      defense,
+      attack,
     } = data;
     const typesArray = types.map((type) => type.type.name);
     if (name) {
@@ -52,6 +57,9 @@ const getPokemon_ById = async (id) => {
         hp: stats[0]?.base_stat,
         skills: abilities[0]?.ability.name,
         image: sprites?.back_default,
+        speed: stats[5]?.base_stat,
+        defense: stats[2]?.base_stat,
+        attack: stats[1]?.base_stat,
       };
       return pokemonFound;
     } else {
@@ -62,11 +70,39 @@ const getPokemon_ById = async (id) => {
   }
 };
 
-const postNew_pokemon = async () => {};
+const createNewPokemon = async (data) => {
+  try {
+    const pokemonObj = {
+      name: data.name.toLowerCase(),
+      height: data.height,
+      weight: data.weight,
+      hp: data.hp,
+      skills: data.skills,
+      image: data.image,
+      speed: data.speed,
+      defense: data.defense,
+      attack: data.attack,
+    };
+    const newPokemon = await Pokemon.create(pokemonObj);
+    await newPokemon.addTypes(data.type);
+    await newPokemon.save();
+    const pokemonCreated = await Pokemon.findOne({
+      where: { name: newPokemon.name },
+      include: {
+        model: Type,
+        attributes: ["name"],
+        through: { attributes: [] },
+      },
+    });
+    return pokemonCreated;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
 
 // Exporta las funciones para su uso en las rutas
 module.exports = {
   getPokemon,
   getPokemon_ById,
-  postNew_pokemon,
+  createNewPokemon,
 };

@@ -5,9 +5,7 @@ const typeRoutes = require("./typesRoutes");
 // Importar todos los routers; RUTAS
 const mainRouter = Router();
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-
+//router paths congi
 mainRouter.use("/pokemon", pokemonsRoutes);
 mainRouter.use("/type", typeRoutes);
 

@@ -9,7 +9,7 @@ export default function Cards({}) {
   const [currentPage, setCurrentPage] = useState(1);
 
   //le damos la logica de como debe renderizar cada pagina
-  const pokemonsForPage = 10;
+  const pokemonsForPage = 12;
   const start = (currentPage - 1) * pokemonsForPage;
 
   const end = start + pokemonsForPage;
@@ -30,6 +30,12 @@ export default function Cards({}) {
 
   return (
     <div className={Styles.cards_container}>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={Math.ceil(pokemons.length / pokemonsForPage)}
+        onNextPage={nextPage}
+        onPrevPage={prevPage}
+      />
       {currentPokemons.length
         ? currentPokemons.map(
             ({ id, name, height, types, weight, hp, skills, image }) => (
@@ -47,12 +53,6 @@ export default function Cards({}) {
             )
           )
         : null}
-      <Pagination
-        currentPage={currentPage}
-        totalPages={Math.ceil(pokemons.length / pokemonsForPage)}
-        onNextPage={nextPage}
-        onPrevPage={prevPage}
-      />
     </div>
   );
 }

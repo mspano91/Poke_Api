@@ -32,8 +32,11 @@ function Details() {
           </p>
           <p>Weight: {pokemonDetails.weight} lbs</p>
           <p>Height: {pokemonDetails.height}</p>
-          <p>Hp:{pokemonDetails.hp}</p>
+          <p>Hp: {pokemonDetails.hp}</p>
           <p>Skills: {pokemonDetails.skills}</p>
+          <p>Speed: {pokemonDetails.speed}</p>
+          <p>Defense: {pokemonDetails.defense}</p>
+          <p>Attack: {pokemonDetails.attack}</p>
         </div>
       ) : null}
     </>

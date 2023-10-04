@@ -1,21 +1,27 @@
 const {
   getPokemon,
   getPokemon_ById,
-  postNew_pokemon,
+  createNewPokemon,
 } = require("../controllers/pokemonController");
+
+const { Pokemon } = require("../db");
 
 //aca vamos a hacer el handler de la peticion general a la api para que me traiga todos
 const getPokemonHandler = async (req, res) => {
   try {
     const pokemonList = await getPokemon();
-    return res.status(200).json(pokemonList);
+    const pokemonsDb = await Pokemon.findAll();
+    //buscamos todos en la bd
+    const allPokemons = [...pokemonList, ...pokemonsDb];
+
+    return res.status(200).json(allPokemons);
   } catch (error) {
     return res.status(500).send("El getPokemonHandler no funca");
   }
 };
 
 //aca vamos a recibir por params porque recibe un ID
-const getPokemonById = async (req, res) => {
+const getPokemonById_Handler = async (req, res) => {
   try {
     const { id } = req.params;
     const data = await getPokemon_ById(id);
@@ -26,12 +32,34 @@ const getPokemonById = async (req, res) => {
   }
 };
 
-const postPokemon = (req, res) => {
-  res.status(200).send(console.log("got to the endpoint"));
+const postPokemonHandler = async (req, res) => {
+  try {
+    const data = req.body;
+    if (
+      !data.name ||
+      !data.weight ||
+      !data.height ||
+      !data.hp ||
+      !data.skills ||
+      !data.image
+    )
+      return res.status(400).json("faltan datos");
+
+    const findPokemon = await Pokemon.findOne({
+      where: { name: data.name.toLowerCase() },
+    });
+
+    if (findPokemon)
+      return res.status(302).json({ message: "this pokemon already exists" });
+    const newPokemon = await createNewPokemon(req.body);
+    return res.json(newPokemon);
+  } catch (error) {
+    return res.status(500).send("El postPokemonHandler no funca");
+  }
 };
 
 module.exports = {
   getPokemonHandler,
-  getPokemonById,
-  postPokemon,
+  getPokemonById_Handler,
+  postPokemonHandler,
 };
