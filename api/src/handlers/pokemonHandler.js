@@ -2,15 +2,22 @@ const {
   getPokemon,
   getPokemon_ById,
   createNewPokemon,
+  getPokemon_ByName,
 } = require("../controllers/pokemonController");
 
-const { Pokemon } = require("../db");
+const { Pokemon, Type } = require("../db");
 
 //aca vamos a hacer el handler de la peticion general a la api para que me traiga todos
 const getPokemonHandler = async (req, res) => {
   try {
     const pokemonList = await getPokemon();
-    const pokemonsDb = await Pokemon.findAll();
+    const pokemonsDb = await Pokemon.findAll({
+      include: {
+        model: Type,
+        attributes: ["name"],
+        through: { attributes: [] },
+      },
+    });
     //buscamos todos en la bd
     const allPokemons = [...pokemonList, ...pokemonsDb];
 
@@ -26,6 +33,16 @@ const getPokemonById_Handler = async (req, res) => {
     const { id } = req.params;
     const data = await getPokemon_ById(id);
     console.log(data);
+    return res.status(200).json(data);
+  } catch (error) {
+    return res.status(500).send("El getPokemonHandler no funca");
+  }
+};
+
+const getByNav_handler = async (req, res) => {
+  try {
+    const { name } = req.params;
+    const data = await getPokemon_ByName(name);
     return res.status(200).json(data);
   } catch (error) {
     return res.status(500).send("El getPokemonHandler no funca");
@@ -58,8 +75,22 @@ const postPokemonHandler = async (req, res) => {
   }
 };
 
+const deletePokemon_Handler = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletePoke = await Pokemon.findByPk(id);
+    await deletePoke.destroy();
+    return res.status(200).json(id);
+  } catch (error) {
+    return res.status(500).send("El deletePokemon_Handler no funca");
+  }
+};
+
 module.exports = {
   getPokemonHandler,
   getPokemonById_Handler,
   postPokemonHandler,
+  deletePokemon_Handler,
+  getByNav_handler,
 };

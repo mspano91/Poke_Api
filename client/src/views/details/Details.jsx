@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonDetail } from "../../redux/action";
 
 function Details() {
+  const navigate = useNavigate();
   const { id } = useParams();
   //este es el id que ingresa por url cada vez que picamos la card
 
@@ -18,6 +19,7 @@ function Details() {
 
   return (
     <>
+      <button onClick={() => navigate("/home")}>back</button>
       {pokemonDetails ? (
         <div>
           <h1>
@@ -27,7 +29,7 @@ function Details() {
           <p>
             Type:
             {pokemonDetails.types?.map((el) => (
-              <span key={el}> {el} </span>
+              <span key={el.name}> {el.name} </span>
             ))}
           </p>
           <p>Weight: {pokemonDetails.weight} lbs</p>

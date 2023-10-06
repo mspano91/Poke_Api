@@ -1,0 +1,5 @@
+.pagContainer{
+    display: flex;
+    justify-content: right;
+    padding-right: 3.5rem;
+}
