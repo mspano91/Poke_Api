@@ -4,16 +4,12 @@ import Styles from "../../views/home/home.styles.module.css";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemonsAction } from "../../redux/action";
+import { getPokemonsAction, resetAllPokemons } from "../../redux/action";
 import Pagination from "../../components/pagination/Pagination";
+import Filters from "../../components/FilterBtns/Filters";
 
 function Home() {
   const dispatch = useDispatch();
-
-  //trae la info
-  useEffect(() => {
-    dispatch(getPokemonsAction());
-  }, [dispatch]);
 
   const pokemons = useSelector((state) => state.pokemons); //traemos los pokemons del estado global
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,9 +34,22 @@ function Home() {
     }
   };
 
+  const HandlerReset = () => {
+    dispatch(resetAllPokemons());
+  };
+  //trae la info
+  useEffect(() => {
+    !pokemons.length && dispatch(getPokemonsAction());
+  }, [dispatch]);
+
   return (
     <div className={Styles.home_container}>
       <NavBar />
+      {currentPokemons.length > 1 ? (
+        <Filters />
+      ) : (
+        <button onClick={HandlerReset}>Back</button>
+      )}
       <Cards currentPokemons={currentPokemons} />
       <Pagination
         currentPage={currentPage}

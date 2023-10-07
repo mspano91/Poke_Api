@@ -8,6 +8,10 @@ export const POST_NEW_POKEMON = "POST_NEW_POKEMON";
 export const DELETE_POKEMON = "DELETE_POKEMON";
 export const GET_POKEMON_NAV = "GET_POKEMON_NAV";
 export const RESET_POKEMONS = "RESET_POKEMONS";
+export const ORDER_POKEMONS = "RDER_POKEMONS";
+export const FILTER_TYPES = "FILTER_TYPES";
+export const ORDER_POKEMONS_By_Id = "ORDER_POKEMONS_By_Id";
+export const ORDER_POKEMONS_By_Atack = "ORDER_POKEMONS_By_Atack";
 
 export const getPokemonsAction = () => {
   return async (dispatch) => {
@@ -123,19 +127,26 @@ export const deletePokemon = (id) => {
 };
 
 export const resetAllPokemons = () => {
-  return async (dispatch) => {
-    try {
-      const { data } = await axios("/pokemon");
-      return dispatch({
-        type: RESET_POKEMONS,
-        payload: data,
-      });
-    } catch (error) {
-      console.log(error);
-      dispatch({
-        type: GET_POKEMONS_ERROR,
-        payload: console.log("no anda el action de resetAllPokemons"), // Puedes ajustar esto según tus necesidades
-      });
-    }
+  return {
+    type: RESET_POKEMONS,
   };
+};
+
+export const filterTypes = (name) => {
+  return {
+    type: FILTER_TYPES,
+    payload: name,
+  };
+};
+
+export const orderpokemons = (order) => {
+  return { type: ORDER_POKEMONS, payload: order };
+};
+
+export const orderpokemonsByid = (order) => {
+  return { type: ORDER_POKEMONS_By_Id, payload: order };
+};
+
+export const orderpokemonsByAtack = (order) => {
+  return { type: ORDER_POKEMONS_By_Atack, payload: order };
 };

@@ -41,7 +41,6 @@ function Create() {
         [name]: [...formData.type, value],
       });
     }
-    console.log(formData);
   };
 
   const handleSubmit = (event) => {

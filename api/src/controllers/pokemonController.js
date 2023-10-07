@@ -4,7 +4,7 @@ const { Pokemon, Type } = require("../db");
 
 // controllers/pokemonController.js
 const getPokemon = async () => {
-  const response = await axios(`${URL}?limit=50`);
+  const response = await axios(`${URL}?limit=151`);
   const pokemonList = response.data.results; //accedemos a la api
 
   if (!pokemonList.length) {
@@ -20,6 +20,7 @@ const getPokemon = async () => {
       height: data.height,
       weight: data.weight,
       types: typesArray,
+      atack: data.stats[1]?.base_stat,
       hp: data.stats[0]?.base_stat,
       skills: data.abilities[0]?.ability.name,
       image: data.sprites?.other["official-artwork"]["front_default"],
