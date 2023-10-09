@@ -4,10 +4,11 @@ import { getPokemonTypes } from "../../redux/action";
 import { useEffect } from "react";
 import {
   filterTypes,
-  orderpokemons,
+  orderpokemons_ByName,
   resetAllPokemons,
-  orderpokemonsByid,
-  orderpokemonsByAtack,
+  orderPokemons_Byid,
+  orderPokemons_ByAtack,
+  orderPokemon_ByOrigin,
 } from "../../redux/action";
 
 export default function Filters() {
@@ -18,12 +19,12 @@ export default function Filters() {
     dispatch(getPokemonTypes());
   }, []);
 
-  const handleOrder = (event) => {
-    dispatch(orderpokemons(event.target.value));
+  const handleOrder_ByName = (event) => {
+    dispatch(orderpokemons_ByName(event.target.value));
   };
 
   const handleOrderById = (event) => {
-    dispatch(orderpokemonsByid(event.target.value));
+    dispatch(orderPokemons_Byid(event.target.value));
   };
 
   const handleFilter = (event) => {
@@ -35,14 +36,18 @@ export default function Filters() {
   };
 
   const handleOrderByAtack = (event) => {
-    dispatch(orderpokemonsByAtack(event.target.value));
+    dispatch(orderPokemons_ByAtack(event.target.value));
+  };
+
+  const HandlePokemon_ByOrigin = (event) => {
+    dispatch(orderPokemon_ByOrigin(event.target.value));
   };
   return (
     <div>
       <button onClick={HandlerReset}>clear</button>
 
       {/* ordenamiento creciente y decreciente */}
-      <select name="order" id="" onChange={handleOrder}>
+      <select name="order" id="" onChange={handleOrder_ByName}>
         {[
           { name: "name incre", value: "I" },
           { name: "name decre", value: "D" },
@@ -70,6 +75,18 @@ export default function Filters() {
         {[
           { name: "Atack +", value: "X" },
           { name: "Atack -", value: "D" },
+        ].map((order) => (
+          <option key={order.name} value={order.value}>
+            {order.name}
+          </option>
+        ))}
+      </select>
+
+      {/* ordenamiento creciente y decreciente through API o DB */}
+      <select name="order" id="" onChange={HandlePokemon_ByOrigin}>
+        {[
+          { name: "PokeApi", value: "Number" },
+          { name: "Data base", value: "String" },
         ].map((order) => (
           <option key={order.name} value={order.value}>
             {order.name}

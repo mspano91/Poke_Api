@@ -11,6 +11,7 @@ import {
   ORDER_POKEMONS,
   ORDER_POKEMONS_By_Id,
   ORDER_POKEMONS_By_Atack,
+  ORDER_POKEMONS_By_Origin,
 } from "./action";
 
 let initialState = {
@@ -101,7 +102,6 @@ const Reducer = (state = initialState, action) => {
       };
     case ORDER_POKEMONS_By_Atack:
       const allbyAtack = [...state.pokemons];
-      console.log(allbyAtack);
       return {
         ...state,
         pokemons:
@@ -109,6 +109,17 @@ const Reducer = (state = initialState, action) => {
             ? allbyAtack.sort((a, b) => b.atack - a.atack)
             : allbyAtack.sort((a, b) => a.atack - b.atack),
       };
+
+    case ORDER_POKEMONS_By_Origin:
+      const byOrigin = [...state.pokemonsCopy];
+      return {
+        ...state,
+        pokemons:
+          action.payload === "String"
+            ? byOrigin.filter((el) => typeof el.id === "string")
+            : byOrigin.filter((el) => typeof el.id === "number"),
+      };
+
     default:
       return state;
   }

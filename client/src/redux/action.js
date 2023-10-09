@@ -12,6 +12,7 @@ export const ORDER_POKEMONS = "RDER_POKEMONS";
 export const FILTER_TYPES = "FILTER_TYPES";
 export const ORDER_POKEMONS_By_Id = "ORDER_POKEMONS_By_Id";
 export const ORDER_POKEMONS_By_Atack = "ORDER_POKEMONS_By_Atack";
+export const ORDER_POKEMONS_By_Origin = "ORDER_POKEMONS_By_Origin";
 
 export const getPokemonsAction = () => {
   return async (dispatch) => {
@@ -61,10 +62,10 @@ export const getPokemonBy_nav = (name) => {
       });
     } catch (error) {
       console.log(error);
-      dispatch({
+      return {
         type: GET_POKEMONS_ERROR,
-        payload: console.log("no anda el action de getPokemonBy_nav"), // Puedes ajustar esto según tus necesidades
-      });
+        payload: alert("this pokemon does not exist"), // Puedes ajustar esto según tus necesidades
+      };
     }
   };
 };
@@ -139,14 +140,21 @@ export const filterTypes = (name) => {
   };
 };
 
-export const orderpokemons = (order) => {
+export const orderpokemons_ByName = (order) => {
   return { type: ORDER_POKEMONS, payload: order };
 };
 
-export const orderpokemonsByid = (order) => {
+export const orderPokemons_Byid = (order) => {
   return { type: ORDER_POKEMONS_By_Id, payload: order };
 };
 
-export const orderpokemonsByAtack = (order) => {
+export const orderPokemons_ByAtack = (order) => {
   return { type: ORDER_POKEMONS_By_Atack, payload: order };
+};
+
+export const orderPokemon_ByOrigin = (order) => {
+  return {
+    type: ORDER_POKEMONS_By_Origin,
+    payload: order,
+  };
 };

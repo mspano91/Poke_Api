@@ -15,7 +15,7 @@ function Home() {
   const [currentPage, setCurrentPage] = useState(1);
 
   //le damos la logica de como debe renderizar cada pagina
-  const pokemonsForPage = 8;
+  const pokemonsForPage = 12;
   const start = (currentPage - 1) * pokemonsForPage;
 
   const end = start + pokemonsForPage;
