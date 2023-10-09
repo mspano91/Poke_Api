@@ -5,8 +5,10 @@ function Landing() {
   const navigate = useNavigate();
   return (
     <div className={Styles.landing_container}>
+      <div className={Styles.banner}>
+        <img src="/assets/banner.png" alt="" />
+      </div>
       <div>
-        <h1>hola aca vas a ver pokemones </h1>
         <button onClick={() => navigate("/home")}>let´s GO</button>
       </div>
     </div>

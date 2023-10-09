@@ -20,6 +20,7 @@ export default function NavBar() {
 
   return (
     <div className={Styles.searchContainer}>
+      <img onClick={() => navigate(`/`)} src="/assets/pokedex.png" alt="" />
       <form onSubmit={handleSubmit} className={Styles.form}>
         <input
           type="text"
@@ -28,6 +29,7 @@ export default function NavBar() {
           placeholder="    Search your pokemon"
         />
         <button className={Styles.btn}>Search</button>
+
         <button onClick={() => navigate(`/create`)} className={Styles.btn}>
           Create pokemon
         </button>

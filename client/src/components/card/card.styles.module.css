@@ -3,7 +3,7 @@
     display: inline-block;
     width: 170px;
     height: 180px;
-    background-color: rgba(0, 0, 0, 0.615);
+    background-color: #00b34b64;
     border: 1px white solid;
     border-radius: 20px;
     padding: 25px;
@@ -12,6 +12,7 @@
     transition: transform 0.25s ease-out;
     justify-content: center;
     align-items: center;
+    color: rgb(255, 255, 255);
 
 }
 .cardContainer p{

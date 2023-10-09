@@ -1,4 +1,5 @@
 import React from "react";
+import Styles from "../FilterBtns/filter.styles.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getPokemonTypes } from "../../redux/action";
 import { useEffect } from "react";
@@ -43,14 +44,14 @@ export default function Filters() {
     dispatch(orderPokemon_ByOrigin(event.target.value));
   };
   return (
-    <div>
+    <div className={Styles.filters}>
       <button onClick={HandlerReset}>clear</button>
 
       {/* ordenamiento creciente y decreciente */}
       <select name="order" id="" onChange={handleOrder_ByName}>
         {[
-          { name: "name incre", value: "I" },
-          { name: "name decre", value: "D" },
+          { name: "Name +", value: "I" },
+          { name: "Name -", value: "D" },
         ].map((order) => (
           <option key={order.name} value={order.value}>
             {order.name}
@@ -61,8 +62,8 @@ export default function Filters() {
       {/* ordenamiento creciente y decreciente POR ID */}
       <select name="order" id="" onChange={handleOrderById}>
         {[
-          { name: "ID incre", value: "Y" },
-          { name: "ID decre", value: "D" },
+          { name: "ID +", value: "Y" },
+          { name: "ID -", value: "D" },
         ].map((order) => (
           <option key={order.name} value={order.value}>
             {order.name}

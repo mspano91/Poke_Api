@@ -1,23 +1,32 @@
 .searchContainer{
     display: flex;
-    gap: 1rem;
-    flex-direction:row;
-    background-color: rgba(0, 0, 0, 0.578);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.298);
     border: none;
     outline: none;
     padding: 10px;
-    width: 500px;
+    width: 900px;
     line-height: 90px;
-    margin-bottom: 30px ;
-       
+    padding-inline: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchContainer img{
+    height: 85px;
+    padding-right: 2rem;
+    cursor: pointer;
 }
 
 .form {
     display: flex;
     align-items: center;
-    gap: 1rem;}
+    gap: 1rem;
+    }
+    
 
 input{
         height: 45px;
+        border-radius: 10px;
     }
    

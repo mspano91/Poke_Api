@@ -3,11 +3,13 @@ import React, { useState, useEffect } from "react";
 import { getPokemonTypes, postNewPokemon } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import validate from "../../components/validate";
 
 function Create() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types); //traemos los types del estado global
   const navigate = useNavigate();
+  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
     name: "",
     type: [],
@@ -27,6 +29,13 @@ function Create() {
       ...formData,
       [event.target.name]: event.target.value,
     });
+
+    setErrors(
+      validate({
+        ...formData,
+        [event.target.name]: event.target.value,
+      })
+    );
   };
 
   const handleTypeChange = (event) => {
@@ -42,9 +51,20 @@ function Create() {
       });
     }
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
+    // Verifica si alguno de los campos requeridos está vacío
+    if (
+      !formData.name ||
+      formData.type.length === 0 ||
+      !formData.image
+      // Agrega aquí otras condiciones para los campos requeridos
+    ) {
+      alert("form incomplete");
+      return;
+    }
+
+    // Si todos los campos requeridos están completos, envía el formulario
     dispatch(postNewPokemon(formData));
     navigate("/home");
   };
@@ -67,13 +87,22 @@ function Create() {
             <div className={Styles.inputContainer} key={prop}>
               <label htmlFor="">{prop}</label>
               {prop === "name" ? (
-                <input
-                  type="text"
-                  value={value}
-                  name={prop}
-                  onChange={handleInput}
-                  placeholder="name"
-                />
+                <div>
+                  <input
+                    type="text"
+                    value={value}
+                    name={prop}
+                    onChange={handleInput}
+                    placeholder="name"
+                  />
+                  <br />
+                  {/* manejo de errores validacion de campo  */}
+                  {errors.name && (
+                    <p style={{ fontSize: "20px", color: "white" }}>
+                      {errors.name}
+                    </p>
+                  )}
+                </div>
               ) : prop === "type" ? (
                 <select
                   id="type"
@@ -101,6 +130,7 @@ function Create() {
                   onChange={handleInput}
                 />
               )}
+
               <p>
                 {prop !== "image" &&
                   prop !== "type" &&
