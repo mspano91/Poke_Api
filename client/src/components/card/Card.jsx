@@ -60,11 +60,9 @@ export default function Card({
           <h2>{name}</h2>
         </div>
         <div>
-          <p>
-            {types?.map((el) => (
-              <span key={el.name}> {el.name} </span>
-            ))}
-          </p>
+          {types?.map((el) => (
+            <span key={el.name}> {el.name} </span>
+          ))}
         </div>
         {typeof id !== "number" && <button onClick={handleDelete}>X</button>}
         {/* si el id no es numero entonces renderizame el boton  */}

@@ -1,9 +1,9 @@
-.cardContainer{
+.cardContainer {
     position: relative;
     display: inline-block;
     width: 170px;
     height: 180px;
-    background-color: #00b34b64;
+    background-color: #16ba32e4;
     border-radius: 20px;
     padding: 25px;
     backface-visibility: hidden;
@@ -12,13 +12,20 @@
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
+    height: 20vh;
+    border-bottom-left-radius: 50% 58%;
+    border-bottom-right-radius: 50% 58%;
 
 }
 
-.cardContainer p{
-    font-size: 15px;
+
+
+span{
+    font-size: 22px;
     margin:0px;
+        padding-bottom: 5rem;
 }
+
 
 .imagen{
     position: absolute;
@@ -69,6 +76,10 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
+
 }
 
 .cardWater h1 {
@@ -82,7 +93,6 @@ padding-top: 1.5rem
             width: 170px;
             height: 180px;
             background-color: #ba4d35e4;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
@@ -91,6 +101,10 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+
+                                height: 20vh;
+                                    border-bottom-left-radius: 50% 58%;
+                                    border-bottom-right-radius: 50% 58%;
 }
 
 .cardFire h1 {
@@ -114,6 +128,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardNormal h1 {
@@ -137,6 +154,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardFighting h1 {
@@ -160,6 +180,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardFlying h1 {
@@ -183,6 +206,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardPoison h1 {
@@ -206,6 +232,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardGround h1 {
@@ -229,6 +258,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardBug h1 {
@@ -252,6 +284,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardGhost h1 {
@@ -275,6 +310,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardSteel h1 {
@@ -298,6 +336,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardElectric h1 {
@@ -320,6 +361,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardGrass h1 {
@@ -343,6 +387,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardPsychic h1 {
@@ -365,6 +412,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardIce h1 {
@@ -388,6 +438,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .carddragon h1 {
@@ -411,6 +464,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardDark h1 {
@@ -434,6 +490,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardFairy h1 {
@@ -457,6 +516,9 @@ padding-top: 1.5rem
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
+                                            height: 20vh;
+                                                border-bottom-left-radius: 50% 58%;
+                                                border-bottom-right-radius: 50% 58%;
 }
 
 .cardRock h1 {
