@@ -25,9 +25,33 @@ export default function Card({
     dispatch(deletePokemon(id));
   };
 
+  const colorsTypes = {
+    normal: Styles.cardNormal,
+    fighting: Styles.cardFighting,
+    flying: Styles.cardFlying,
+    poison: Styles.cardPoison,
+    ground: Styles.cardGround,
+    rock: Styles.cardRock,
+    bug: Styles.cardBug,
+    ghost: Styles.cardGhost,
+    steel: Styles.cardSteel,
+    fire: Styles.cardFire,
+    water: Styles.cardWater,
+    electric: Styles.cardElectric,
+    grass: Styles.cardGrass,
+    psychic: Styles.cardPsychic,
+    ice: Styles.cardIce,
+    dragon: Styles.carddragon,
+    dark: Styles.cardDark,
+    fairy: Styles.cardFairy,
+  };
+
+  // Usamos 'hasWaterType' para determinar la clase
+  const containerClassName = colorsTypes[types[0].name];
+
   return (
     <>
-      <div className={Styles.cardContainer}>
+      <div className={containerClassName}>
         <div onClick={() => navigate(`/detail/${id}`)}>
           <img className={Styles.imagen} src={image} alt="" />
         </div>

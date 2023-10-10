@@ -4,7 +4,6 @@
     width: 170px;
     height: 180px;
     background-color: #00b34b64;
-    border: 1px white solid;
     border-radius: 20px;
     padding: 25px;
     backface-visibility: hidden;
@@ -15,6 +14,7 @@
     color: rgb(255, 255, 255);
 
 }
+
 .cardContainer p{
     font-size: 15px;
     margin:0px;
@@ -51,4 +51,416 @@ padding-top: 1.5rem
 
 .cardContainer:hover{
     transform: scale(1.05);
+}
+
+/* cartas por color de type */
+.cardWater{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color: #4b6babe4;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardWater h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+.cardFire{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color: #ba4d35e4;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardFire h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardNormal{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color: #58413e;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardNormal h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardFighting{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#9E724D;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardFighting h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardFlying{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#a492b5;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardFlying h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardPoison{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#af59c5c5;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardPoison h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardGround{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#a66f3f;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardGround h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardBug{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#80BF51;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardBug h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardGhost{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#6856ba;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardGhost h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardSteel{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#9b95ba;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardSteel h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardElectric{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#d2c856;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardElectric h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+.cardGrass{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#4da843;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardGrass h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardPsychic{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#66558f;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardPsychic h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+.cardIce{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#52adce;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardIce h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.carddragon{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#989c46;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.carddragon h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardDark{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#1f3d37;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardDark h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardFairy{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#bd476b;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardFairy h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.cardRock{
+        position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 180px;
+            background-color:#8e5f2e;
+    
+            border-radius: 20px;
+            padding: 25px;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: transform 0.25s ease-out;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+}
+
+.cardRock h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
 }
