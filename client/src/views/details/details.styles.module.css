@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 .ConfiAll{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left;}
+    text-align: left;
+    font-size: 25px;
+}
+
+span{
+        font-size: 25px;
+        
+}
+    
     
 .btn{
     width:670px;
@@ -45,7 +55,7 @@
     }
 
 .details_ground {
-    background-color: #222622e4;
+        background-color: #a66f3f;
         }
 
 .details_fairy {
@@ -69,4 +79,10 @@
 }
 .details_dragon{
             background-color: #989c46;
+}
+.details_dark{
+            background-color: #1f3d37;
+}
+.details_steel{
+            background-color: #9b95ba;
 }

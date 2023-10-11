@@ -1,10 +1,9 @@
 
- @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 
-
-
- .cardContainer {
+.cardContainer {
+    font-family: 'Russo One', sans-serif;
     position: relative;
     display: inline-block;
     width: 170px;
@@ -20,17 +19,31 @@
     color: rgb(255, 255, 255);
     height: 20vh;
     border-bottom-left-radius: 50% 58%;
-    border-bottom-right-radius: 50% 58%; 
+    border-bottom-right-radius: 50% 58%;
     box-shadow: 0px 0px 10px rgb(155, 32, 32);
-
-  
+}
+.cardContainer:hover{
+    transform: scale(1.05);
 }
 
-span{
+.cardContainer h1 {
+    font-size: 50px;
+    margin: 0px;
+    text-transform: uppercase;
+    }
+
+        .cardContainer span {
+
     font-size: 17px;
     margin:0px;
     padding-bottom: 5rem;
 }
+
+p{
+    font-size:23px;
+    margin: 0;
+}
+
 
 
 .imagen{
@@ -38,18 +51,16 @@ position: absolute;
 width: 175px;
 top: -110px;
 transform:translatex(-80px) ;
-
 }
 
-a.detail{
-    width: 100px;
-}
 
 .details{
 display:inline-block;
 padding-top: 1.5rem
 }
 
+
+/* show delete */
 .confirmation{
     display: inline-block;
     position: absolute;
@@ -65,25 +76,24 @@ padding-top: 1.5rem
 .confirmation button{
 margin: .5rem;}
 
+/* nombres de todos */
  h2{
-    font-size: 20px;
+    font-size: 25px;
     margin: 0px;
-    padding-block: 10px;
+    /* padding-block: 10px; */
         text-transform: uppercase;
-        
 }
-.cardContainer h1 {
-    font-size: 50px;
-    margin: 0px;
-    text-transform: uppercase; 
-    }
 
-.cardContainer:hover{
-    transform: scale(1.05);
-}
+
+
+
+
+
+
+
 
 /* cartas por color de type
- 
+
 */
 .cardWater{
             font-family: 'Russo One', sans-serif;
@@ -104,7 +114,7 @@ margin: .5rem;}
             transform: translatey(0);
             transition: transform 0.70s ease-out;
             box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            
+
 }
 
 .cardWater:hover {
@@ -113,11 +123,13 @@ margin: .5rem;}
 
 
 .cardWater h1 {
+    align-items: center;
     font-size: 50px;
     margin: 0px;
     text-transform: uppercase;
- 
 }
+
+
  .cardFire{
              font-family: 'Russo One', sans-serif;
             position: relative;
@@ -137,9 +149,9 @@ margin: .5rem;}
             height: 20vh;transform: translatey(0);
             transition: transform 0.70s ease-out;
             box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            
+
             }
-            
+
             .cardFire:hover {
                 transform: translateY(-15px);
             }
@@ -169,9 +181,9 @@ margin: .5rem;}
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
             box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            
+
             }
-            
+
             .cardNormal:hover {
                 transform: translateY(-15px);
             }
@@ -202,7 +214,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-            
+
             .cardFighting:hover {
                 transform: translateY(-15px);
             }
@@ -213,7 +225,7 @@ margin: .5rem;}
     text-transform: uppercase;
 }
 
-.cardFlying{        
+.cardFlying{
             font-family: 'Russo One', sans-serif;
             position: relative;
             display: inline-block;
@@ -233,13 +245,13 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                     box-shadow: 0px 0px 5px rgb(255, 255, 255);
                     }
-                    
+
                     .cardFlying:hover {
                         transform: translateY(-15px);
                     }
 
 .cardFlying h1 {
-    font-size: 50px;
+    font-size: 70px;
     margin: 0px;
     text-transform: uppercase;
 }
@@ -264,7 +276,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
             box-shadow: 0px 0px 5px rgb(255, 255, 255);
                     }
-                    
+
                     .cardPoison:hover {
                         transform: translateY(-15px);
                     }
@@ -294,7 +306,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
                 }
-                
+
                 .cardGround:hover {
                     transform: translateY(-15px);
                 }
@@ -325,7 +337,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
         }
-        
+
         .cardBug:hover {
             transform: translateY(-15px);
         }
@@ -356,7 +368,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-                    
+
                     .cardGhost:hover {
                         transform: translateY(-15px);
                     }
@@ -390,8 +402,8 @@ margin: .5rem;}
                 .cardSteel:hover {
                     transform: translateY(-15px);
                 }
-                    
-                                                
+
+
 .cardSteel h1 {
     font-size: 50px;
     margin: 0px;
@@ -399,7 +411,7 @@ margin: .5rem;}
 }
 
 .cardElectric{
-            font-family: 'Russo One', sans-serif;   
+            font-family: 'Russo One', sans-serif;
             position: relative;
             display: inline-block;
             width: 170px;
@@ -418,7 +430,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-        
+
                 .cardElectric:hover {
                     transform: translateY(-15px);
                 }
@@ -477,7 +489,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-                
+
                 .cardPsychic:hover {
                     transform: translateY(-15px);
                 }
@@ -507,7 +519,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-        
+
                 .cardIce:hover {
                     transform: translateY(-15px);
                 }
@@ -519,7 +531,7 @@ margin: .5rem;}
 }
 
 .carddragon{
-            font-family: 'Russo One', sans-serif;   
+            font-family: 'Russo One', sans-serif;
             position: relative;
             display: inline-block;
             width: 170px;
@@ -538,7 +550,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-                    
+
                     .carddragon:hover {
                         transform: translateY(-15px);
                     }
@@ -569,7 +581,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-            
+
                     .cardDark:hover {
                         transform: translateY(-15px);
                     }
@@ -600,7 +612,7 @@ margin: .5rem;}
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-            
+
                      .cardFairy:hover {
                      transform: translateY(-15px);
                      }
@@ -627,11 +639,11 @@ margin: .5rem;}
             color: rgb(255, 255, 255);
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
-            border-bottom-left-radius: 50% 58%;        
+            border-bottom-left-radius: 50% 58%;
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
-            
+
                 .cardRock:hover {
                     transform: translateY(-15px);
                 }
@@ -640,4 +652,4 @@ margin: .5rem;}
     font-size: 50px;
     margin: 0px;
     text-transform: uppercase;
-} 
+}

@@ -26,7 +26,7 @@ export default function NavBar() {
           type="text"
           value={searchState}
           onChange={handleInput}
-          placeholder="    Search your pokemon"
+          placeholder="   Search your pokemon"
         />
         <button className={Styles.btn}>Search</button>
 

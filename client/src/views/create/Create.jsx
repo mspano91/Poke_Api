@@ -80,7 +80,7 @@ function Create() {
       <div className={Styles.formContainer}>
         <button onClick={() => navigate("/home")}>back</button>
         <div className={Styles.contain}>
-          <h1>Crear nuevo Pokémon</h1>
+          <h1>Create Pokémon</h1>
           <img />
           <form onSubmit={handleSubmit}>
             {/* para mapear las props del objeto, entries convierte a 

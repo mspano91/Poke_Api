@@ -3,6 +3,7 @@ const {
   getPokemon_ById,
   createNewPokemon,
   getPokemon_ByName,
+  getPokemon_ById_BD,
 } = require("../controllers/pokemonController");
 
 const { Pokemon, Type } = require("../db");
@@ -27,15 +28,19 @@ const getPokemonHandler = async (req, res) => {
   }
 };
 
-//aca vamos a recibir por params porque recibe un ID
 const getPokemonById_Handler = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await getPokemon_ById(id);
-    console.log(data);
-    return res.status(200).json(data);
+    //si el id no es un numero buscar en el controller de la base de dato
+    if (isNaN(id)) {
+      const data = await getPokemon_ById_BD(id); //busca en la bd
+      return res.status(200).json(data);
+    } else {
+      const data = await getPokemon_ById(id); //hace peticion a la api
+      return res.status(200).json(data);
+    }
   } catch (error) {
-    return res.status(500).send("El getPokemonHandler no funca");
+    return res.status(500).json({ erorr: error.message });
   }
 };
 

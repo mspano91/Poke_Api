@@ -16,7 +16,12 @@ function Details() {
     dispatch(getPokemonDetail(id));
   }, [id]);
 
-  let numeroId = String(pokemonDetails.id).padStart(4, "0"); //rellenamos de ceros el numero ID
+  // let numeroId = String(pokemonDetails.id).padStart(4, "0"); //rellenamos de ceros el numero ID
+
+  //rellenamos de ceros hasta 4 digitos si no los tiene
+  let id_ = String(id).padStart(4, "0");
+  //si el numero tiene mas de 4 digitos lo cortamos en 4
+  let numeroId = id_.substring(0, 4);
 
   const colorsDetail = {
     water: Styles.details_Water,
@@ -34,6 +39,8 @@ function Details() {
     ice: Styles.details_ice,
     rock: Styles.details_rock,
     dragon: Styles.details_dragon,
+    dark: Styles.details_dark,
+    steel: Styles.details_steel,
   };
 
   // Usamos 'hasWaterType' para determinar la clase

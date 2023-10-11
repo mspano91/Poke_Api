@@ -4,7 +4,7 @@ const { Pokemon, Type } = require("../db");
 
 // controllers/pokemonController.js
 const getPokemon = async () => {
-  const response = await axios(`${URL}?limit=151`);
+  const response = await axios(`${URL}?limit=500`);
   const pokemonList = response.data.results; //accedemos a la api
 
   if (!pokemonList.length) {
@@ -113,6 +113,31 @@ const getPokemon_ByName = async (name) => {
   }
 };
 
+const getPokemon_ById_BD = async (id) => {
+  try {
+    const pokeBD = await Pokemon.findOne({
+      where: { id: id }, // Utiliza el parámetro "id" que se pasa a la función
+      include: {
+        model: Type,
+        attributes: ["name"],
+        through: { attributes: [] },
+      },
+    });
+
+    if (pokeBD) {
+      // Hacer algo con el pokemon encontrado
+      console.log(pokeBD);
+      return pokeBD;
+    } else {
+      console.log("No se encontró un Pokémon con el ID proporcionado");
+      return null; // O manejar el caso de no encontrar el Pokémon de alguna otra manera
+    }
+  } catch (error) {
+    console.error("Error al buscar el Pokémon en la base de datos:", error);
+    throw error; // Puedes manejar el error de la manera que desees
+  }
+};
+
 const createNewPokemon = async (data) => {
   try {
     const pokemonObj = {
@@ -149,4 +174,5 @@ module.exports = {
   getPokemon_ById,
   createNewPokemon,
   getPokemon_ByName,
+  getPokemon_ById_BD,
 };

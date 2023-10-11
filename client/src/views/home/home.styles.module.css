@@ -1,6 +1,6 @@
 .home_container{
     background-color: #5D8AFF;
-    min-height: 920px;
+    min-height: 935px;
     max-width: cover;
 }
 
@@ -12,13 +12,13 @@
 }
 
 .notFound {
-    padding-top: 5rem;
+    padding-top: 15rem;
     align-items: center;
     justify-content: center;
 }
 
 .notFound img {
-    width: 500px;
+    width: 250px;
     height: cover;
 }
 

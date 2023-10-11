@@ -80,6 +80,7 @@ function Home() {
         <div className={Styles.notFound}>
           <img src="https://i.pinimg.com/originals/4f/d0/c0/4fd0c049c173c9beb5a0101a84deb6f9.gif"></img>
           <h1>ohoh Not Found!</h1>
+          <button onClick={HandlerReset}>¿buged?</button>
         </div>
       )}
     </div>
