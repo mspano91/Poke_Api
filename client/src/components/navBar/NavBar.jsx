@@ -31,7 +31,7 @@ export default function NavBar() {
         <button className={Styles.btn}>Search</button>
 
         <button onClick={() => navigate(`/create`)} className={Styles.btn}>
-          Create pokemon
+          Create
         </button>
       </form>
     </div>

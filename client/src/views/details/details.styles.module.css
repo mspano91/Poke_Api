@@ -1,0 +1,72 @@
+.ConfiAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;}
+    
+.btn{
+    width:670px;
+}
+.name_id{
+    display: block  ;
+    text-transform: capitalize;
+}
+
+.information{
+    display: block;
+    padding-top: 6rem;
+}
+
+.details_Water {
+            background-color: #4b6babe4;
+}
+
+.details_fire{
+            background-color: #ba4d35e4;
+    }
+
+.details_electric {
+            background-color: #d2c856;
+        }
+
+.details_grass {
+            background-color: #4a9542;
+}
+
+.details_bug{
+            background-color: #80BF51;
+}
+.details_normal {
+            background-color: #58413e;
+}
+
+.details_poison{
+            background-color: #af59c5c5;
+    }
+
+.details_ground {
+    background-color: #222622e4;
+        }
+
+.details_fairy {
+            background-color: #bd476b;
+}
+
+.details_fighting{
+            background-color: #9E724D;
+}
+.details_psychic{
+            background-color: #66558f;
+}
+.details_ghost{
+            background-color: #6856ba;
+}
+.details_ice{
+            background-color: #52adce;
+}
+.details_rock{
+            background-color: #8e5f2e;
+}
+.details_dragon{
+            background-color: #989c46;
+}

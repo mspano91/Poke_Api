@@ -1,12 +1,19 @@
 let validate = function (formData) {
   let errors = {};
-  const regexLetras = /^[a-zA-Z]+$/;
+  const regexLetters = /^[a-zA-Z]+$/;
+  const regexNum = /\d/;
 
-  if (!regexLetras.test(formData.name)) {
-    errors.name = "your name is unvailable";
+  if (!regexLetters.test(formData.name)) {
+    errors.name = "Your name is unavailable";
   }
+
   if (formData.name.length >= 10) {
-    errors.name = "the name should not be more than 10 characters";
+    errors.name = "The name should not be more than 10 characters";
+  }
+
+  // Validación para bloquear entrada de números en el campo "name"
+  if (regexNum.test(formData.name)) {
+    errors.name = "The name should not contain numbers";
   }
 
   return errors;

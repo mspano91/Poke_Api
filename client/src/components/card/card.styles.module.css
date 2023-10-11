@@ -1,34 +1,40 @@
-.cardContainer {
+
+ @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+
+
+ .cardContainer {
     position: relative;
     display: inline-block;
     width: 170px;
     height: 180px;
-    background-color: #16ba32e4;
+    background-color: #222622e4;
     border-radius: 20px;
     padding: 25px;
     backface-visibility: hidden;
     transform: translateZ(0);
-    transition: transform 0.25s ease-out;
+    transition: transform 0.70s ease-out;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
     height: 20vh;
     border-bottom-left-radius: 50% 58%;
-    border-bottom-right-radius: 50% 58%;
+    border-bottom-right-radius: 50% 58%; 
+    box-shadow: 0px 0px 10px rgb(155, 32, 32);
 
+  
 }
 
-
-
 span{
-    font-size: 22px;
+    font-size: 17px;
     margin:0px;
-        padding-bottom: 5rem;
+    padding-bottom: 5rem;
 }
 
 
 .imagen{
-    position: absolute;
+position: absolute;
 width: 175px;
 top: -110px;
 transform:translatex(-80px) ;
@@ -44,51 +50,77 @@ display:inline-block;
 padding-top: 1.5rem
 }
 
+.confirmation{
+    display: inline-block;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25rem;
+    width: 500px;
+    height: 150px;
+    border-radius: 2rem;
+    background-color: #00000080;
+}
+
+.confirmation button{
+margin: .5rem;}
+
  h2{
     font-size: 20px;
     margin: 0px;
     padding-block: 10px;
         text-transform: uppercase;
+        
 }
 .cardContainer h1 {
     font-size: 50px;
     margin: 0px;
-    text-transform: uppercase;
+    text-transform: uppercase; 
     }
 
 .cardContainer:hover{
     transform: scale(1.05);
 }
 
-/* cartas por color de type */
+/* cartas por color de type
+ 
+*/
 .cardWater{
-        position: relative;
-            display: inline-block;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
+             display: inline-block;
             width: 170px;
             height: 180px;
             background-color: #4b6babe4;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
-            transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-
+            border-bottom-right-radius: 50% 58%;
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            transform: translatey(0);
+            transition: transform 0.70s ease-out;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            
 }
+
+.cardWater:hover {
+    transform: translateY(-15px);
+}
+
 
 .cardWater h1 {
     font-size: 50px;
     margin: 0px;
     text-transform: uppercase;
+ 
 }
-.cardFire{
-        position: relative;
+ .cardFire{
+             font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
@@ -97,15 +129,20 @@ padding-top: 1.5rem
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-
-                                height: 20vh;
-                                    border-bottom-left-radius: 50% 58%;
-                                    border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            border-bottom-right-radius: 50% 58%;
+            height: 20vh;transform: translatey(0);
+            transition: transform 0.70s ease-out;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            
+            }
+            
+            .cardFire:hover {
+                transform: translateY(-15px);
+            }
 
 .cardFire h1 {
     font-size: 50px;
@@ -114,24 +151,30 @@ padding-top: 1.5rem
 }
 
 .cardNormal{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color: #58413e;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            
+            }
+            
+            .cardNormal:hover {
+                transform: translateY(-15px);
+            }
 
 .cardNormal h1 {
     font-size: 50px;
@@ -140,24 +183,29 @@ padding-top: 1.5rem
 }
 
 .cardFighting{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#9E724D;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+            
+            .cardFighting:hover {
+                transform: translateY(-15px);
+            }
 
 .cardFighting h1 {
     font-size: 50px;
@@ -165,25 +213,30 @@ padding-top: 1.5rem
     text-transform: uppercase;
 }
 
-.cardFlying{
-        position: relative;
+.cardFlying{        
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#a492b5;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+                    }
+                    
+                    .cardFlying:hover {
+                        transform: translateY(-15px);
+                    }
 
 .cardFlying h1 {
     font-size: 50px;
@@ -192,25 +245,29 @@ padding-top: 1.5rem
 }
 
 .cardPoison{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#af59c5c5;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
-
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+                    }
+                    
+                    .cardPoison:hover {
+                        transform: translateY(-15px);
+                    }
 .cardPoison h1 {
     font-size: 50px;
     margin: 0px;
@@ -218,24 +275,29 @@ padding-top: 1.5rem
 }
 
 .cardGround{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#a66f3f;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+                }
+                
+                .cardGround:hover {
+                    transform: translateY(-15px);
+                }
 
 .cardGround h1 {
     font-size: 50px;
@@ -244,24 +306,29 @@ padding-top: 1.5rem
 }
 
 .cardBug{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+             position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#80BF51;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardBug:hover {
+            transform: translateY(-15px);
+        }
 
 .cardBug h1 {
     font-size: 50px;
@@ -270,24 +337,29 @@ padding-top: 1.5rem
 }
 
 .cardGhost{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#6856ba;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+                    
+                    .cardGhost:hover {
+                        transform: translateY(-15px);
+                    }
 
 .cardGhost h1 {
     font-size: 50px;
@@ -296,25 +368,30 @@ padding-top: 1.5rem
 }
 
 .cardSteel{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#9b95ba;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
-
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+                .cardSteel:hover {
+                    transform: translateY(-15px);
+                }
+                    
+                                                
 .cardSteel h1 {
     font-size: 50px;
     margin: 0px;
@@ -322,24 +399,29 @@ padding-top: 1.5rem
 }
 
 .cardElectric{
-        position: relative;
+            font-family: 'Russo One', sans-serif;   
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#d2c856;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+        
+                .cardElectric:hover {
+                    transform: translateY(-15px);
+                }
 
 .cardElectric h1 {
     font-size: 50px;
@@ -347,25 +429,28 @@ padding-top: 1.5rem
     text-transform: uppercase;
 }
 .cardGrass{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
-            background-color:#4da843;
-    
+            background-color:#4a9542;
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
-
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+                    .cardGrass:hover {
+                        transform: translateY(-15px);
+                    }
 .cardGrass h1 {
     font-size: 50px;
     margin: 0px;
@@ -373,24 +458,29 @@ padding-top: 1.5rem
 }
 
 .cardPsychic{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#66558f;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+                
+                .cardPsychic:hover {
+                    transform: translateY(-15px);
+                }
 
 .cardPsychic h1 {
     font-size: 50px;
@@ -398,24 +488,29 @@ padding-top: 1.5rem
     text-transform: uppercase;
 }
 .cardIce{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#52adce;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+        
+                .cardIce:hover {
+                    transform: translateY(-15px);
+                }
 
 .cardIce h1 {
     font-size: 50px;
@@ -424,24 +519,29 @@ padding-top: 1.5rem
 }
 
 .carddragon{
-        position: relative;
+            font-family: 'Russo One', sans-serif;   
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#989c46;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+                    
+                    .carddragon:hover {
+                        transform: translateY(-15px);
+                    }
 
 .carddragon h1 {
     font-size: 50px;
@@ -450,24 +550,29 @@ padding-top: 1.5rem
 }
 
 .cardDark{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#1f3d37;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+            
+                    .cardDark:hover {
+                        transform: translateY(-15px);
+                    }
 
 .cardDark h1 {
     font-size: 50px;
@@ -476,24 +581,29 @@ padding-top: 1.5rem
 }
 
 .cardFairy{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#bd476b;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            border-bottom-left-radius: 50% 58%;
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+            
+                     .cardFairy:hover {
+                     transform: translateY(-15px);
+                     }
 
 .cardFairy h1 {
     font-size: 50px;
@@ -502,27 +612,32 @@ padding-top: 1.5rem
 }
 
 .cardRock{
-        position: relative;
+            font-family: 'Russo One', sans-serif;
+            position: relative;
             display: inline-block;
             width: 170px;
             height: 180px;
             background-color:#8e5f2e;
-    
             border-radius: 20px;
             padding: 25px;
             backface-visibility: hidden;
             transform: translateZ(0);
-            transition: transform 0.25s ease-out;
             justify-content: center;
             align-items: center;
             color: rgb(255, 255, 255);
-                                            height: 20vh;
-                                                border-bottom-left-radius: 50% 58%;
-                                                border-bottom-right-radius: 50% 58%;
-}
+            height: 20vh;
+            border-bottom-right-radius: 50% 58%;
+            border-bottom-left-radius: 50% 58%;        
+            transition: transform 0.70s ease-out;
+                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            }
+            
+                .cardRock:hover {
+                    transform: translateY(-15px);
+                }
 
 .cardRock h1 {
     font-size: 50px;
     margin: 0px;
     text-transform: uppercase;
-}
+} 

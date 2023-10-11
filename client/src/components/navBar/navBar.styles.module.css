@@ -1,13 +1,13 @@
 .searchContainer{
     display: flex;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.298);
+    /* background-color: rgba(0, 0, 0, 0.298); */
     border: none;
     outline: none;
     padding: 10px;
     width: 900px;
     line-height: 90px;
-    padding-inline: 2rem;
+    /* padding-inline: 2rem; */
     justify-content: center;
     align-items: center;
 }
@@ -28,5 +28,6 @@
 input{
         height: 45px;
         border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.605);
     }
    

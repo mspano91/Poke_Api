@@ -57,7 +57,8 @@ function Create() {
     if (
       !formData.name ||
       formData.type.length === 0 ||
-      !formData.image
+      !formData.image ||
+      errors.length
       // Agrega aquí otras condiciones para los campos requeridos
     ) {
       alert("form incomplete");
@@ -76,71 +77,71 @@ function Create() {
 
   return (
     <div>
-      <button onClick={() => navigate("/home")}>back</button>
-      <h1>Crear nuevo Pokémon</h1>
       <div className={Styles.formContainer}>
-        <img />
-        <form onSubmit={handleSubmit}>
-          {/* para mapear las props del objeto, entries convierte a 
+        <button onClick={() => navigate("/home")}>back</button>
+        <div className={Styles.contain}>
+          <h1>Crear nuevo Pokémon</h1>
+          <img />
+          <form onSubmit={handleSubmit}>
+            {/* para mapear las props del objeto, entries convierte a 
           form data a un array y los itera */}
-          {Object.entries(formData).map(([prop, value]) => (
-            <div className={Styles.inputContainer} key={prop}>
-              <label htmlFor="">{prop}</label>
-              {prop === "name" ? (
-                <div>
+            {Object.entries(formData).map(([prop, value]) => (
+              <div className={Styles.inputContainer} key={prop}>
+                <label htmlFor="">{prop}</label>
+                {prop === "name" ? (
+                  <div>
+                    <input
+                      type="text"
+                      value={value}
+                      name={prop}
+                      onChange={handleInput}
+                      placeholder="name"
+                    />
+                    <br />
+                    {/* manejo de errores validacion de campo  */}
+                    {errors.name && alert(errors.name)}
+                  </div>
+                ) : prop === "type" ? (
+                  <select
+                    id="type"
+                    name="type"
+                    value={formData.type}
+                    onChange={handleTypeChange}
+                  >
+                    <option value="">Select</option>
+                    {types.map((type) => (
+                      <option key={type.id} value={type.id}>
+                        {type.name}
+                      </option>
+                    ))}
+                  </select>
+                ) : prop === "image" ? (
+                  <input type="text" onChange={handleInput} name={prop} />
+                ) : (
                   <input
-                    type="text"
-                    value={value}
                     name={prop}
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value={value}
                     onChange={handleInput}
-                    placeholder="name"
                   />
-                  <br />
-                  {/* manejo de errores validacion de campo  */}
-                  {errors.name && (
-                    <p style={{ fontSize: "20px", color: "white" }}>
-                      {errors.name}
-                    </p>
-                  )}
-                </div>
-              ) : prop === "type" ? (
-                <select
-                  id="type"
-                  name="type"
-                  value={formData.type}
-                  onChange={handleTypeChange}
-                >
-                  <option value="">Select</option>
-                  {types.map((type) => (
-                    <option key={type.id} value={type.id}>
-                      {type.name}
-                    </option>
-                  ))}
-                </select>
-              ) : prop === "image" ? (
-                <input type="text" onChange={handleInput} name={prop} />
-              ) : (
-                <input
-                  name={prop}
-                  type="range"
-                  min="0"
-                  max="100"
-                  step="1"
-                  value={value}
-                  onChange={handleInput}
-                />
-              )}
+                )}
 
-              <p>
-                {prop !== "image" &&
-                  prop !== "type" &&
-                  prop !== "name" &&
-                  value}
-              </p>
-            </div>
-          ))}
-          <button type="submit">Create!</button>
-        </form>
+                <p>
+                  {prop !== "image" &&
+                    prop !== "type" &&
+                    prop !== "name" &&
+                    value}
+                </p>
+              </div>
+            ))}
+            <button className={Styles.btn} type="submit">
+              Create!
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

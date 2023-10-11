@@ -11,6 +11,7 @@
     row-gap: 6rem;
     cursor: pointer;
     margin-top: 1rem;
+    order: 2;
 }
 
 @media (min-width:800px){
