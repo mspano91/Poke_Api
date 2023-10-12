@@ -6,20 +6,19 @@ const URL = "https://pokeapi.co/api/v2/type";
 const getType = async (req, res) => {
   try {
     const findType = await Type.findAll();
-    //buscamos en la db LOS Types y los traemos
+    //find in database and bring it
     if (findType.length) return res.status(200).json(findType);
-    //sino traemos de la api y los insertamos en la db
+    //if not, bring to the api and will save those in database
     const { data } = await axios(`${URL}`);
     let types = data.results;
-    //con un bucle for eliminamos la url de los objetos
+    //loop for to delete url property
     for (let type of types) {
       const typeData = await axios(type.url);
       delete type.url;
-      //eliminamos la propiedad url del objeto type
       type.id = typeData.data.id;
-      //agregamos una propiedad nueva id
+      //also add new id property
     }
-    //insertamos los types a la BS
+    //insert the data in database
     const typeDb = await Type.bulkCreate(types);
 
     return res.status(200).json(typeDb);

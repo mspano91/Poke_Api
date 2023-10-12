@@ -4,8 +4,8 @@ const { Pokemon, Type } = require("../db");
 
 // controllers/pokemonController.js
 const getPokemon = async () => {
-  const response = await axios(`${URL}?limit=500`);
-  const pokemonList = response.data.results; //accedemos a la api
+  const response = await axios(`${URL}?limit=48`);
+  const pokemonList = response.data.results; //api access peticion
 
   if (!pokemonList.length) {
     throw new Error("No Pokémon found in GetPokemon controller");
@@ -20,7 +20,7 @@ const getPokemon = async () => {
       height: data.height,
       weight: data.weight,
       types: typesArray,
-      atack: data.stats[1]?.base_stat,
+      attack: data.stats[1]?.base_stat,
       hp: data.stats[0]?.base_stat,
       skills: data.abilities[0]?.ability.name,
       image: data.sprites?.other["official-artwork"]["front_default"],
@@ -29,9 +29,8 @@ const getPokemon = async () => {
   return Promise.all(pokeMap);
 };
 
-//llama por id y name
 const getPokemon_ById = async (id) => {
-  // Lógica para traer pokemon por id
+  // taking pokemon by ID
   try {
     const { data } = await axios(`${URL}/${id}`);
     const {
@@ -72,7 +71,7 @@ const getPokemon_ById = async (id) => {
 };
 
 const getPokemon_ByName = async (name) => {
-  // Lógica para traer pokemon por id
+  // taking pokemon by NAME
   try {
     const { data } = await axios(`${URL}/${name.toLowerCase()}`);
     console.log(data);
@@ -113,31 +112,6 @@ const getPokemon_ByName = async (name) => {
   }
 };
 
-const getPokemon_ById_BD = async (id) => {
-  try {
-    const pokeBD = await Pokemon.findOne({
-      where: { id: id }, // Utiliza el parámetro "id" que se pasa a la función
-      include: {
-        model: Type,
-        attributes: ["name"],
-        through: { attributes: [] },
-      },
-    });
-
-    if (pokeBD) {
-      // Hacer algo con el pokemon encontrado
-      console.log(pokeBD);
-      return pokeBD;
-    } else {
-      console.log("No se encontró un Pokémon con el ID proporcionado");
-      return null; // O manejar el caso de no encontrar el Pokémon de alguna otra manera
-    }
-  } catch (error) {
-    console.error("Error al buscar el Pokémon en la base de datos:", error);
-    throw error; // Puedes manejar el error de la manera que desees
-  }
-};
-
 const createNewPokemon = async (data) => {
   try {
     const pokemonObj = {
@@ -163,6 +137,28 @@ const createNewPokemon = async (data) => {
       },
     });
     return pokemonCreated;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+const getPokemon_ById_BD = async (id) => {
+  try {
+    const pokeBD = await Pokemon.findOne({
+      where: { id: id }, // Utiliza el parámetro "id" que se pasa a la función
+      include: {
+        model: Type,
+        attributes: ["name"],
+        through: { attributes: [] },
+      },
+    });
+
+    if (pokeBD) {
+      return pokeBD;
+    } else {
+      console.log("No se encontró un Pokémon con el ID proporcionado");
+      return null;
+    }
   } catch (error) {
     throw new Error(error.message);
   }

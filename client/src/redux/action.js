@@ -8,8 +8,8 @@ export const POST_NEW_POKEMON = "POST_NEW_POKEMON";
 export const DELETE_POKEMON = "DELETE_POKEMON";
 export const GET_POKEMON_NAV = "GET_POKEMON_NAV";
 export const RESET_POKEMONS = "RESET_POKEMONS";
-export const ORDER_POKEMONS = "RDER_POKEMONS";
 export const FILTER_TYPES = "FILTER_TYPES";
+export const ORDER_POKEMONS_By_name = "RDER_POKEMONS";
 export const ORDER_POKEMONS_By_Id = "ORDER_POKEMONS_By_Id";
 export const ORDER_POKEMONS_By_Atack = "ORDER_POKEMONS_By_Atack";
 export const ORDER_POKEMONS_By_Origin = "ORDER_POKEMONS_By_Origin";
@@ -94,7 +94,7 @@ export const postNewPokemon = (formData) => {
   return async (dispatch) => {
     try {
       const { data } = await axios.post(`/pokemon/create`, formData);
-      console.log(data);
+
       return dispatch({
         type: POST_NEW_POKEMON,
         payload: data,
@@ -141,7 +141,7 @@ export const filterTypes = (name) => {
 };
 
 export const orderpokemons_ByName = (order) => {
-  return { type: ORDER_POKEMONS, payload: order };
+  return { type: ORDER_POKEMONS_By_name, payload: order };
 };
 
 export const orderPokemons_Byid = (order) => {

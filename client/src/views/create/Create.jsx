@@ -8,6 +8,8 @@ import validate from "../../components/validate";
 function Create() {
   const dispatch = useDispatch();
   const types = useSelector((state) => state.types); //traemos los types del estado global
+  const pokemons = useSelector((state) => state.pokemons); //takin global state redux
+
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
@@ -53,6 +55,10 @@ function Create() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (pokemons.some((pokemon) => pokemon.name === formData.name)) {
+      alert("Pokemon with this name already exists.");
+      return;
+    }
     // Verifica si alguno de los campos requeridos está vacío
     if (
       !formData.name ||
@@ -78,7 +84,9 @@ function Create() {
   return (
     <div>
       <div className={Styles.formContainer}>
-        <button onClick={() => navigate("/home")}>back</button>
+        <button className={Styles.btn2} onClick={() => navigate("/home")}>
+          back
+        </button>
         <div className={Styles.contain}>
           <h1>Create Pokémon</h1>
           <img />

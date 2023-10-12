@@ -8,7 +8,7 @@ import {
   GET_POKEMON_NAV,
   RESET_POKEMONS,
   FILTER_TYPES,
-  ORDER_POKEMONS,
+  ORDER_POKEMONS_By_name,
   ORDER_POKEMONS_By_Id,
   ORDER_POKEMONS_By_Atack,
   ORDER_POKEMONS_By_Origin,
@@ -46,6 +46,7 @@ const Reducer = (state = initialState, action) => {
         ...state,
         types: action.payload,
       };
+
     case POST_NEW_POKEMON:
       return {
         ...state,
@@ -82,7 +83,7 @@ const Reducer = (state = initialState, action) => {
           el.types.some((tipo) => tipo.name === action.payload)
         ),
       };
-    case ORDER_POKEMONS:
+    case ORDER_POKEMONS_By_name:
       const allOrder = [...state.pokemons];
       return {
         ...state,
@@ -106,8 +107,8 @@ const Reducer = (state = initialState, action) => {
         ...state,
         pokemons:
           action.payload === "X"
-            ? allbyAtack.sort((a, b) => b.atack - a.atack)
-            : allbyAtack.sort((a, b) => a.atack - b.atack),
+            ? allbyAtack.sort((a, b) => b.attack - a.attack)
+            : allbyAtack.sort((a, b) => a.attack - b.attack),
       };
 
     case ORDER_POKEMONS_By_Origin:

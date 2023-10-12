@@ -48,7 +48,7 @@ p{
 
 .imagen{
 position: absolute;
-width: 175px;
+max-width: 175px;
 top: -110px;
 transform:translatex(-80px) ;
 }
@@ -71,6 +71,7 @@ padding-top: 1.5rem
     height: 150px;
     border-radius: 2rem;
     background-color: #00000080;
+    z-index: 100;
 }
 
 .confirmation button{

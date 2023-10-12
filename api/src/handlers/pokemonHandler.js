@@ -8,7 +8,7 @@ const {
 
 const { Pokemon, Type } = require("../db");
 
-//aca vamos a hacer el handler de la peticion general a la api para que me traiga todos
+// get All pokemons main handler
 const getPokemonHandler = async (req, res) => {
   try {
     const pokemonList = await getPokemon();
@@ -19,24 +19,23 @@ const getPokemonHandler = async (req, res) => {
         through: { attributes: [] },
       },
     });
-    //buscamos todos en la bd
     const allPokemons = [...pokemonList, ...pokemonsDb];
 
     return res.status(200).json(allPokemons);
   } catch (error) {
-    return res.status(500).send("El getPokemonHandler no funca");
+    return res.status(500).json({ erorr: error.message });
   }
 };
 
 const getPokemonById_Handler = async (req, res) => {
   try {
     const { id } = req.params;
-    //si el id no es un numero buscar en el controller de la base de dato
+    // is is Nan so search in DB
     if (isNaN(id)) {
-      const data = await getPokemon_ById_BD(id); //busca en la bd
+      const data = await getPokemon_ById_BD(id); //search in DB
       return res.status(200).json(data);
     } else {
-      const data = await getPokemon_ById(id); //hace peticion a la api
+      const data = await getPokemon_ById(id); //Search API
       return res.status(200).json(data);
     }
   } catch (error) {
@@ -44,13 +43,13 @@ const getPokemonById_Handler = async (req, res) => {
   }
 };
 
-const getByNav_handler = async (req, res) => {
+const getPokemonByName_handler = async (req, res) => {
   try {
     const { name } = req.params;
     const data = await getPokemon_ByName(name);
     return res.status(200).json(data);
   } catch (error) {
-    return res.status(500).send("El getPokemonHandler no funca");
+    return res.status(500).json({ erorr: error.message });
   }
 };
 
@@ -65,7 +64,7 @@ const postPokemonHandler = async (req, res) => {
       !data.skills ||
       !data.image
     )
-      return res.status(400).json("faltan datos");
+      return res.status(400).json("missing form data");
 
     const findPokemon = await Pokemon.findOne({
       where: { name: data.name.toLowerCase() },
@@ -73,10 +72,10 @@ const postPokemonHandler = async (req, res) => {
 
     if (findPokemon)
       return res.status(302).json({ message: "this pokemon already exists" });
-    const newPokemon = await createNewPokemon(req.body);
+    const newPokemon = await createNewPokemon(data);
     return res.json(newPokemon);
   } catch (error) {
-    return res.status(500).send("El postPokemonHandler no funca");
+    return res.status(500).json({ erorr: error.message });
   }
 };
 
@@ -88,7 +87,7 @@ const deletePokemon_Handler = async (req, res) => {
     await deletePoke.destroy();
     return res.status(200).json(id);
   } catch (error) {
-    return res.status(500).send("El deletePokemon_Handler no funca");
+    return res.status(500).json({ erorr: error.message });
   }
 };
 
@@ -97,5 +96,5 @@ module.exports = {
   getPokemonById_Handler,
   postPokemonHandler,
   deletePokemon_Handler,
-  getByNav_handler,
+  getPokemonByName_handler,
 };

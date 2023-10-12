@@ -1,11 +1,12 @@
 const { Router } = require("express");
+
 const pokemonsRoutes = require("./pokemonsRoutes");
 const typeRoutes = require("./typesRoutes");
 
-// Importar todos los routers; RUTAS
+// router initializated
 const mainRouter = Router();
 
-//router paths congi
+//router paths moduls
 mainRouter.use("/pokemon", pokemonsRoutes);
 mainRouter.use("/type", typeRoutes);
 

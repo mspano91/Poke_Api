@@ -13,7 +13,8 @@
 }
 
 .searchContainer img{
-    height: 85px;
+    width: 250px;
+    height: cover;
     padding-right: 2rem;
     cursor: pointer;
 }
