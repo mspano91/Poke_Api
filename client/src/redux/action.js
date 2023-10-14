@@ -8,6 +8,7 @@ export const POST_NEW_POKEMON = "POST_NEW_POKEMON";
 export const DELETE_POKEMON = "DELETE_POKEMON";
 export const GET_POKEMON_NAV = "GET_POKEMON_NAV";
 export const RESET_POKEMONS = "RESET_POKEMONS";
+export const POKEMON_DETAIL_RESET = "POKEMON_DETAIL_RESET";
 export const FILTER_TYPES = "FILTER_TYPES";
 export const ORDER_POKEMONS_By_name = "RDER_POKEMONS";
 export const ORDER_POKEMONS_By_Id = "ORDER_POKEMONS_By_Id";
@@ -18,8 +19,6 @@ export const getPokemonsAction = () => {
   return async (dispatch) => {
     try {
       const { data } = await axios("/pokemon");
-      //seteamos la url en app,
-      //entonces poniendo /pokemon conecta con el back
       return dispatch({
         type: GET_ALL_POKEMONS,
         payload: data,
@@ -28,7 +27,7 @@ export const getPokemonsAction = () => {
       console.log(error);
       dispatch({
         type: GET_POKEMONS_ERROR,
-        payload: console.log("no anda el action de getPokemonsAction"), // Puedes ajustar esto según tus necesidades
+        payload: console.log("no anda el action de getPokemonsAction"),
       });
     }
   };
@@ -46,7 +45,7 @@ export const getPokemonDetail = (id) => {
       console.log(error);
       dispatch({
         type: GET_POKEMONS_ERROR,
-        payload: console.log("no anda el action de getPokemonDetail"), // Puedes ajustar esto según tus necesidades
+        payload: console.log("no anda el action de getPokemonDetail"),
       });
     }
   };
@@ -64,13 +63,11 @@ export const getPokemonBy_nav = (name) => {
       console.log(error);
       return {
         type: GET_POKEMONS_ERROR,
-        payload: alert("this pokemon does not exist"), // Puedes ajustar esto según tus necesidades
+        payload: alert("this pokemon does not exist"),
       };
     }
   };
 };
-
-//el action lo llamamos en el useState del home para conectar el back con el front
 
 export const getPokemonTypes = () => {
   return async (dispatch) => {
@@ -130,6 +127,12 @@ export const deletePokemon = (id) => {
 export const resetAllPokemons = () => {
   return {
     type: RESET_POKEMONS,
+  };
+};
+
+export const resetDetails = () => {
+  return {
+    type: POKEMON_DETAIL_RESET,
   };
 };
 

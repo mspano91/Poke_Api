@@ -30,6 +30,7 @@ const getPokemonHandler = async (req, res) => {
 const getPokemonById_Handler = async (req, res) => {
   try {
     const { id } = req.params;
+    console.log(id);
     // is is Nan so search in DB
     if (isNaN(id)) {
       const data = await getPokemon_ById_BD(id); //search in DB

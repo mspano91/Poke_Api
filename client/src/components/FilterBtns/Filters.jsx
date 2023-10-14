@@ -7,7 +7,7 @@ import {
   filterTypes,
   orderpokemons_ByName,
   resetAllPokemons,
-  // orderPokemons_Byid,
+  orderPokemons_Byid,
   orderPokemons_ByAtack,
   orderPokemon_ByOrigin,
 } from "../../redux/action";
@@ -24,9 +24,9 @@ export default function Filters() {
     dispatch(orderpokemons_ByName(event.target.value));
   };
 
-  // const handleOrderById = (event) => {
-  //   dispatch(orderPokemons_Byid(event.target.value));
-  // };
+  const handleOrderById = (event) => {
+    dispatch(orderPokemons_Byid(event.target.value));
+  };
 
   const handleFilter = (event) => {
     dispatch(filterTypes(event.target.value));
@@ -58,8 +58,8 @@ export default function Filters() {
           </option>
         ))}
       </select>
-      {/* 
-      ordenamiento creciente y decreciente POR ID
+
+      {/* ordenamiento creciente y decreciente POR ID */}
       <select name="order" id="" onChange={handleOrderById}>
         {[
           { name: "ID +", value: "Y" },
@@ -69,7 +69,7 @@ export default function Filters() {
             {order.name}
           </option>
         ))}
-      </select> */}
+      </select>
 
       {/* ordenamiento creciente y decreciente POR attack */}
       <select name="order" id="" onChange={handleOrderByAtack}>

@@ -13,6 +13,22 @@ span{
 
 }
 
+.notFound {
+    padding-top: 15rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.notFound img {
+    width: 250px;
+    height: cover;
+}
+
+.notFound h1 {
+    color: rgb(0, 0, 0);
+}
+
+
 
 img{
     width: 500px;
@@ -90,4 +106,20 @@ img{
 }
 .details_steel{
             background-color: #9b95ba;
+}
+
+.slide-in {
+    animation: slideIn 0.28s ease both;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }

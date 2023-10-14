@@ -7,8 +7,8 @@ import validate from "../../components/validate";
 
 function Create() {
   const dispatch = useDispatch();
-  const types = useSelector((state) => state.types); //traemos los types del estado global
-  const pokemons = useSelector((state) => state.pokemons); //takin global state redux
+  const types = useSelector((state) => state.types); //taking types and pokemons from global state
+  const pokemons = useSelector((state) => state.pokemonsCopy);
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState({});
@@ -53,19 +53,18 @@ function Create() {
       });
     }
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (pokemons.some((pokemon) => pokemon.name === formData.name)) {
       alert("Pokemon with this name already exists.");
       return;
     }
-    // Verifica si alguno de los campos requeridos está vacío
     if (
       !formData.name ||
       formData.type.length === 0 ||
       !formData.image ||
       errors.length
-      // Agrega aquí otras condiciones para los campos requeridos
     ) {
       alert("form incomplete");
       return;

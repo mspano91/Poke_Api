@@ -12,6 +12,7 @@ import {
   ORDER_POKEMONS_By_Id,
   ORDER_POKEMONS_By_Atack,
   ORDER_POKEMONS_By_Origin,
+  POKEMON_DETAIL_RESET,
 } from "./action";
 
 let initialState = {
@@ -20,6 +21,7 @@ let initialState = {
   pokemonDetails: {},
   types: [],
   pokemonsCopy: [],
+  pokemonDetailsReset: [],
 };
 
 const Reducer = (state = initialState, action) => {
@@ -40,6 +42,11 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         pokemonDetails: action.payload,
+      };
+    case POKEMON_DETAIL_RESET:
+      return {
+        ...state,
+        pokemonDetails: state.pokemonDetailsReset,
       };
     case GET_POKEMON_TYPES:
       return {
@@ -112,7 +119,7 @@ const Reducer = (state = initialState, action) => {
       };
 
     case ORDER_POKEMONS_By_Origin:
-      const byOrigin = [...state.pokemonsCopy];
+      const byOrigin = [...state.pokemons];
       return {
         ...state,
         pokemons:

@@ -16,7 +16,7 @@ function Details() {
     dispatch(getPokemonDetail(id));
   }, [id]);
 
-  // let numeroId = String(pokemonDetails.id).padStart(4, "0"); //rellenamos de ceros el numero ID
+  console.log(pokemonDetails);
 
   //rellenamos de ceros hasta 4 digitos si no los tiene
   let id_ = String(id).padStart(4, "0");
@@ -51,9 +51,10 @@ function Details() {
 
   return (
     <>
-      {pokemonDetails ? (
+      {pokemonDetails.id ? (
         <div className={containerClassName}>
-          <div className={Styles.ConfiAll}>
+          <div className={`${Styles.ConfiAll} ${Styles["slide-in"]}`}>
+            {/* ${Styles["slide-in"] aca estamos haciendo la animacion del detail */}
             <div className={Styles.name_id}>
               <h1>
                 #{numeroId}-{pokemonDetails.name}

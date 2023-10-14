@@ -4,7 +4,11 @@ import Styles from "../../views/home/home.styles.module.css";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPokemonsAction, resetAllPokemons } from "../../redux/action";
+import {
+  getPokemonsAction,
+  resetAllPokemons,
+  resetDetails,
+} from "../../redux/action";
 import Pagination from "../../components/pagination/Pagination";
 import Filters from "../../components/FilterBtns/Filters";
 import Loading from "../../components/loading/Loading";
@@ -26,7 +30,6 @@ function Home() {
     // comprobamos si la página actual es mayor que 1 antes de disminuir la página.
     if (currentPage > 1) {
       setCurrentPage((prevPage) => prevPage - 1);
-      console.log(currentPage);
     }
   };
   const nextPage = () => {
@@ -46,6 +49,7 @@ function Home() {
   //
   useEffect(() => {
     const fetchData = async () => {
+      dispatch(resetDetails()); //aca vaciamos el array de details para que cuando me renderiza el nuevo se borre el anterior antes y no lo renderice
       try {
         if (!pokemons.length) {
           await dispatch(getPokemonsAction());
@@ -58,6 +62,10 @@ function Home() {
     };
     fetchData();
   }, [dispatch, pokemons]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [pokemons.length]);
 
   return (
     <div className={Styles.home_container}>
@@ -72,8 +80,8 @@ function Home() {
           <Pagination
             currentPage={currentPage}
             totalPages={Math.ceil(pokemons.length / pokemonsForPage)}
-            onNextPage={nextPage}
-            onPrevPage={prevPage}
+            nextPage={nextPage}
+            prevPage={prevPage}
             pagination_butttons={pagination_butttons}
           />
         </div>
