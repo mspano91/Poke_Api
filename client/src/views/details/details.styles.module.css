@@ -6,11 +6,11 @@
     align-items: center;
     text-align: left;
     font-size: 25px;
+    font-family: 'Russo One', sans-serif;
 }
 
 span{
         font-size: 25px;
-
 }
 
 .notFound {

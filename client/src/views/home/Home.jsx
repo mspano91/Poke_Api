@@ -21,7 +21,7 @@ function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   //pagination
-  const pokemonsForPage = 12;
+  const pokemonsForPage = 8;
   const start = (currentPage - 1) * pokemonsForPage;
   const end = start + pokemonsForPage;
   const currentPokemons = pokemons.slice(start, end);

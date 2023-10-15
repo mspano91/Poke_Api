@@ -1,5 +1,5 @@
 .home_container{
-    background-color: #5d8bffcb;
+    background-image: url("assets/fondo4.png");
     min-height: 935px;
     max-width: cover;
 }
@@ -31,3 +31,4 @@
     margin: 0px;
     z-index: 100;
 }
+

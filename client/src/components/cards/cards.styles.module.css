@@ -1,11 +1,11 @@
 .cards_container {
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     display:grid;
     grid-template-columns: repeat(1, 1fr);
     max-width: 100%;
     min-height:64vh;
-    padding-inline: 10rem;
+    padding-inline: 22rem;
     padding-top: 6rem;
     padding-bottom: 1.5rem;
     row-gap: 6rem;
@@ -16,7 +16,7 @@
 
 @media (min-width:800px){
     .cards_container{
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 

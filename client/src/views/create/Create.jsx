@@ -84,7 +84,7 @@ function Create() {
     <div>
       <div className={Styles.formContainer}>
         <button className={Styles.btn2} onClick={() => navigate("/home")}>
-          back
+          Back home
         </button>
         <div className={Styles.contain}>
           <h1>Create Pokémon</h1>

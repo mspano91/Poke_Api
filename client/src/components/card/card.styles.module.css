@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 
@@ -52,6 +51,8 @@ max-width: 175px;
 top: -110px;
 transform:translatex(-80px) ;
 }
+
+
 
 
 .details{
@@ -120,6 +121,7 @@ margin: .5rem;}
 
 .cardWater:hover {
     transform: translateY(-15px);
+    box-shadow: 0px 0px 35px rgb(17, 141, 242);
 }
 
 
@@ -155,6 +157,7 @@ margin: .5rem;}
 
             .cardFire:hover {
                 transform: translateY(-15px);
+                box-shadow: 0px 0px 35px rgb(237, 130, 126);
             }
 
 .cardFire h1 {
@@ -187,6 +190,7 @@ margin: .5rem;}
 
             .cardNormal:hover {
                 transform: translateY(-15px);
+                box-shadow: 0px 0px 35px #58413e;
             }
 
 .cardNormal h1 {
@@ -213,11 +217,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
             }
 
             .cardFighting:hover {
                 transform: translateY(-15px);
+                box-shadow: 0px 0px 35px #9E724D;
             }
 
 .cardFighting h1 {
@@ -244,11 +249,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
                     }
 
                     .cardFlying:hover {
                         transform: translateY(-15px);
+                        box-shadow: 0px 0px 35px#a492b5;
                     }
 
 .cardFlying h1 {
@@ -280,6 +286,7 @@ margin: .5rem;}
 
                     .cardPoison:hover {
                         transform: translateY(-15px);
+                        box-shadow: 0px 0px 35px #db6af5c5;
                     }
 .cardPoison h1 {
     font-size: 50px;
@@ -305,11 +312,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-                }
-
-                .cardGround:hover {
-                    transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardGround:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #a66f3f;
                 }
 
 .cardGround h1 {
@@ -336,11 +344,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
         }
-
+        
         .cardBug:hover {
             transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #80BF51;
         }
 
 .cardBug h1 {
@@ -368,10 +377,11 @@ margin: .5rem;}
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
                         box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
+                    }
+                    
                     .cardGhost:hover {
                         transform: translateY(-15px);
+                        box-shadow: 0px 0px 35px #6856ba;
                     }
 
 .cardGhost h1 {
@@ -398,10 +408,11 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-                .cardSteel:hover {
-                    transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        .cardSteel:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #9b95ba;
                 }
 
 
@@ -429,11 +440,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                .cardElectric:hover {
-                    transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardElectric:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #d2c856;
                 }
 
 .cardElectric h1 {
@@ -459,10 +471,11 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-                    .cardGrass:hover {
-                        transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        .cardGrass:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #4a9542;
                     }
 .cardGrass h1 {
     font-size: 50px;
@@ -488,11 +501,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                .cardPsychic:hover {
-                    transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardPsychic:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #a57eff;
                 }
 
 .cardPsychic h1 {
@@ -518,11 +532,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                .cardIce:hover {
-                    transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardIce:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #52adce;
                 }
 
 .cardIce h1 {
@@ -549,11 +564,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                    .carddragon:hover {
-                        transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .carddragon:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #bcfd5ad9;
                     }
 
 .carddragon h1 {
@@ -580,11 +596,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                    .cardDark:hover {
-                        transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardDark:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #66e5cb;
                     }
 
 .cardDark h1 {
@@ -611,11 +628,12 @@ margin: .5rem;}
             height: 20vh;
             border-bottom-right-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                     .cardFairy:hover {
-                     transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardFairy:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #ef7c9e;
                      }
 
 .cardFairy h1 {
@@ -642,11 +660,12 @@ margin: .5rem;}
             border-bottom-right-radius: 50% 58%;
             border-bottom-left-radius: 50% 58%;
             transition: transform 0.70s ease-out;
-                        box-shadow: 0px 0px 5px rgb(255, 255, 255);
-            }
-
-                .cardRock:hover {
-                    transform: translateY(-15px);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255);
+        }
+        
+        .cardRock:hover {
+            transform: translateY(-15px);
+            box-shadow: 0px 0px 35px #8e5f2e;
                 }
 
 .cardRock h1 {
