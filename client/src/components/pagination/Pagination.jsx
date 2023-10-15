@@ -7,8 +7,22 @@ function Pagination({
   prevPage,
   pagination_butttons,
 }) {
-  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
-  // we made a array of total page
+  // Define cuántos botones deseas mostrar.
+  const maxButtons = 5;
+
+  // Calcula un rango de páginas centrado en la página actual.
+  const halfMaxButtons = Math.floor(maxButtons / 2);
+  let start = Math.max(1, currentPage - halfMaxButtons);
+  let end = Math.min(totalPages, start + maxButtons - 1);
+  // Ajusta el rango si estás cerca del inicio o el final.
+  if (end - start + 1 < maxButtons) {
+    start = Math.max(1, end - maxButtons + 1);
+  }
+
+  const pages = Array.from(
+    { length: end - start + 1 },
+    (_, index) => start + index
+  );
 
   return (
     <div className={Style.pagContainer}>
