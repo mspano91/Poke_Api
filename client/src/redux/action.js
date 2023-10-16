@@ -1,4 +1,8 @@
 import axios from "axios";
+// ES6 Modules or TypeScript
+import Swal from "sweetalert2";
+
+// CommonJS
 
 export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const GET_POKEMONS_ERROR = "GET_POKEMONS_ERROR";
@@ -61,9 +65,15 @@ export const getPokemonBy_nav = (name) => {
       });
     } catch (error) {
       console.log(error);
+      Swal.fire({
+        title: "This pokemon does not exist!",
+        // text: "Do you want to continue",
+        // icon: "warning",
+        confirmButtonText: "Try again!",
+        background: "#1A1A1A",
+      });
       return {
         type: GET_POKEMONS_ERROR,
-        payload: alert("this pokemon does not exist"),
       };
     }
   };

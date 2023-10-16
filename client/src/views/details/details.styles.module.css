@@ -9,6 +9,16 @@
     font-family: 'Russo One', sans-serif;
 }
 
+.name{
+    font-family: 'Russo One', sans-serif;
+    margin: 0px;
+    padding-top: 2rem;}
+
+.hp{
+font-size: 45px;
+text-transform: capitalize;
+}
+
 span{
         font-size: 25px;
 }
@@ -26,6 +36,7 @@ span{
 
 .notFound h1 {
     color: rgb(0, 0, 0);
+
 }
 
 

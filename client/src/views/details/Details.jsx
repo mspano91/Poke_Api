@@ -53,28 +53,30 @@ function Details() {
     <>
       {pokemonDetails.id ? (
         <div className={containerClassName}>
+          <h1 className={Styles.name}>
+            #{numeroId}-{pokemonDetails.name}
+          </h1>
           <div className={`${Styles.ConfiAll} ${Styles["slide-in"]}`}>
             {/* ${Styles["slide-in"] aca estamos haciendo la animacion del detail */}
             <div className={Styles.name_id}>
-              <h1>
-                #{numeroId}-{pokemonDetails.name}
-              </h1>
               <img src={pokemonDetails.image} alt="" />
             </div>
             <div className={Styles.information}>
+              <p className={Styles.hp}>HP: {pokemonDetails.hp}</p>
               <p>
-                Type:
                 {pokemonDetails.types?.map((el) => (
-                  <span key={el.name}> {el.name} </span>
+                  <span className={Styles.hp} key={el.name}>
+                    {" "}
+                    {el.name}{" "}
+                  </span>
                 ))}
               </p>
-              <p>Weight: {pokemonDetails.weight} lbs</p>
-              <p>Height: {pokemonDetails.height}</p>
-              <p>Hp: {pokemonDetails.hp}</p>
-              <p>Skills: {pokemonDetails.skills}</p>
               <p>Speed: {pokemonDetails.speed}</p>
-              <p>Defense: {pokemonDetails.defense}</p>
               <p>Attack: {pokemonDetails.attack}</p>
+              <p>Height: {pokemonDetails.height}</p>
+              <p>Defense: {pokemonDetails.defense}</p>
+              <p>Skills: {pokemonDetails.skills}</p>
+              <p>Weight: {pokemonDetails.weight} lbs</p>
             </div>
           </div>
           <button className={Styles.btn} onClick={() => navigate("/home")}>

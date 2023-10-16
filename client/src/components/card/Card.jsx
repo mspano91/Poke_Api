@@ -3,6 +3,7 @@ import Styles from "./card.styles.module.css";
 import { useNavigate } from "react-router-dom";
 import { deletePokemon } from "../../redux/action";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Card({
   id,
@@ -25,18 +26,22 @@ export default function Card({
 
   const handleDelete = () => {
     // Muestra la alerta de confirmación
-    setShowAlert(true);
-  };
-
-  const handleConfirmDelete = () => {
-    // Realiza la eliminación solo si el usuario confirma
-    dispatch(deletePokemon(id));
-    setShowAlert(false);
-  };
-
-  const handleCancelDelete = () => {
-    // Cancela la eliminación si el usuario cancela
-    setShowAlert(false);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Realiza la eliminación solo si el usuario confirma
+        dispatch(deletePokemon(id));
+        setShowAlert(false);
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      }
+    });
   };
 
   const colorsTypes = {
@@ -83,15 +88,6 @@ export default function Card({
         {typeof id !== "number" && <button onClick={handleDelete}>X</button>}
         {/* si el id no es numero entonces renderizame el boton  */}
       </div>
-
-      {/* //alerta de eliminar card */}
-      {showAlert && (
-        <div className={Styles.confirmation}>
-          <p>¿Estás seguro de que deseas eliminar esta tarjeta?</p>
-          <button onClick={handleConfirmDelete}>Sí</button>
-          <button onClick={handleCancelDelete}>No</button>
-        </div>
-      )}
     </>
   );
 }
