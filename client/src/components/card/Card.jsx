@@ -2,44 +2,38 @@ import { useDispatch } from "react-redux";
 import Styles from "./card.styles.module.css";
 import { useNavigate } from "react-router-dom";
 import { deletePokemon } from "../../redux/action";
-import { useState } from "react";
 import Swal from "sweetalert2";
 
-export default function Card({
-  id,
-  image,
-  name,
-  height,
-  types,
-  weight,
-  hp,
-  skills,
-}) {
-  const [showAlert, setShowAlert] = useState(false);
+export default function Card({ id, image, name, types }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  //rellenamos de ceros hasta 4 digitos si no los tiene
+  //completing number id with 4 zeros
   let id_ = String(id).padStart(4, "0");
-  //si el numero tiene mas de 4 digitos lo cortamos en 4
+  //if number is more than 4 digits should cut the number in 4
   let numeroId = id_.substring(0, 4);
 
   const handleDelete = () => {
-    // Muestra la alerta de confirmación
+    // show alert confirmation
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
+      background: "#1A1A1A",
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // Realiza la eliminación solo si el usuario confirma
+        // delete pokemon if is confirmed
         dispatch(deletePokemon(id));
-        setShowAlert(false);
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your pokemon has been deleted",
+          background: "#1A1A1A",
+          confirmButtonColor: "#3085d6",
+        });
       }
     });
   };
@@ -65,8 +59,6 @@ export default function Card({
     dark: Styles.cardDark,
     fairy: Styles.cardFairy,
   };
-
-  // Usamos 'hasWaterType' para determinar la clase
   const containerClassName = colorsTypes[types[0].name] || Styles.cardContainer;
 
   return (
@@ -80,13 +72,15 @@ export default function Card({
           <h1>#{numeroId}</h1>
           <h2>{name}</h2>
         </div>
-        <div className={Styles.Ptypes}>
+
+        <div>
           {types?.map((el) => (
             <p key={el.name}> {el.name} </p>
           ))}
         </div>
+
         {typeof id !== "number" && <button onClick={handleDelete}>X</button>}
-        {/* si el id no es numero entonces renderizame el boton  */}
+        {/* if id is Nan render button delete  */}
       </div>
     </>
   );
