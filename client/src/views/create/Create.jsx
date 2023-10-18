@@ -58,7 +58,11 @@ function Create() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (pokemons.some((pokemon) => pokemon.name === formData.name)) {
-      alert("Pokemon with this name already exists.");
+      Swal.fire({
+        title: "This pokemon already exists.",
+        confirmButtonText: "Try again!",
+        background: "#1A1A1A",
+      });
       return;
     }
     if (
@@ -67,7 +71,11 @@ function Create() {
       !formData.image ||
       errors.length
     ) {
-      alert("form incomplete");
+      Swal.fire({
+        title: "Form incomplete",
+        confirmButtonText: "Try again!",
+        background: "#1A1A1A",
+      });
       return;
     }
     if (errors.name) {

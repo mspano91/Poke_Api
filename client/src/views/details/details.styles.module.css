@@ -119,6 +119,10 @@ img{
             background-color: #9b95ba;
 }
 
+.details_flying{
+        background-color: #5846b5;
+    }
+
 .slide-in {
     animation: slideIn 0.28s ease both;
 }

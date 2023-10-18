@@ -34,6 +34,7 @@ function Details() {
     ground: Styles.details_ground,
     fairy: Styles.details_fairy,
     fighting: Styles.details_fighting,
+    flying: Styles.details_flying,
     psychic: Styles.details_psychic,
     ghost: Styles.details_ghost,
     ice: Styles.details_ice,
