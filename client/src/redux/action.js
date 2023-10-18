@@ -64,8 +64,6 @@ export const getPokemonBy_nav = (name) => {
       console.log(error);
       Swal.fire({
         title: "This pokemon does not exist!",
-        // text: "Do you want to continue",
-        // icon: "warning",
         confirmButtonText: "Try again!",
         background: "#1A1A1A",
       });
@@ -125,7 +123,7 @@ export const deletePokemon = (id) => {
       console.log(error);
       dispatch({
         type: GET_POKEMONS_ERROR,
-        payload: console.log("no anda el action de deletePokemon"), // Puedes ajustar esto según tus necesidades
+        payload: console.log("no anda el action de deletePokemon"),
       });
     }
   };

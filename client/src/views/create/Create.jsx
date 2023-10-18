@@ -4,6 +4,7 @@ import { getPokemonTypes, postNewPokemon } from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import validate from "../../components/validate";
+import Swal from "sweetalert2";
 
 function Create() {
   const dispatch = useDispatch();
@@ -69,7 +70,14 @@ function Create() {
       alert("form incomplete");
       return;
     }
-
+    if (errors.name) {
+      Swal.fire({
+        title: errors.name,
+        confirmButtonText: "Try again!",
+        background: "#1A1A1A",
+      });
+      return;
+    }
     // Si todos los campos requeridos están completos, envía el formulario
     dispatch(postNewPokemon(formData));
     navigate("/home");
@@ -105,8 +113,6 @@ function Create() {
                       placeholder="name"
                     />
                     <br />
-                    {/* manejo de errores validacion de campo  */}
-                    {errors.name && alert(errors.name)}
                   </div>
                 ) : prop === "type" ? (
                   <select
