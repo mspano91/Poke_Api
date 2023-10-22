@@ -8,12 +8,12 @@ let validate = function (formData) {
   }
 
   if (formData.name.length >= 10) {
-    errors.name = "The name should not be more than 10 characters";
+    errors.name = "The name is too long, try again!";
   }
 
   // Validación para bloquear entrada de números en el campo "name"
   if (regexNum.test(formData.name)) {
-    errors.name = "The name should not contain numbers";
+    errors.name = "Numbers are not allowed";
   }
 
   return errors;

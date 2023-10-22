@@ -81,7 +81,7 @@ function Details() {
             </div>
           </div>
           <button className={Styles.btn} onClick={() => navigate("/home")}>
-            back
+            Back
           </button>
         </div>
       ) : null}
