@@ -74,7 +74,6 @@ const getPokemon_ByName = async (name) => {
   // taking pokemon by NAME
   try {
     const { data } = await axios(`${URL}/${name.toLowerCase()}`);
-    console.log(data);
     const {
       id,
       name: dataName,
